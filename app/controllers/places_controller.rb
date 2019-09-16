@@ -4,6 +4,19 @@ class PlacesController < ApplicationController
   BUSINESS_PATH = "/v3/businesses/"
   API_KEY = ENV["YELP_API"]
 
+
+  def map
+    @places = Place.geocoded
+    @markers = @places.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude
+      }
+    end
+  end
+
+
+
   def get_businesses(term, location)
     url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
