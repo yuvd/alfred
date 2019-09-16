@@ -11,29 +11,23 @@ Preference.destroy_all
 Category.destroy_all
 User.destroy_all
 
+CategoryService.new.perform
 
 user = User.create!(email: 'robert@gmail.com', password: '123456')
 
-category1 = Category.create!(name: 'Yoga')
-category2 = Category.create!(name: 'Concerts')
-category3 = Category.create!(name: 'Gym')
-category4 = Category.create!(name: 'Spectacles')
-category5 = Category.create!(name: 'Job fairs')
-category6 = Category.create!(name: 'Sports championships')
+place1 = Place.create!(name: 'Yoga 4 U', category: Category.first, location: 'Ben Yehuda 32, Tel Aviv')
+place2 = Place.create!(name: 'Yoga Sababa', category: Category.first, location: 'Bograshov 14, Tel Aviv')
+place3 = Place.create!(name: 'Space', category: Category.first, location: 'Sheinkin 42, Tel Aviv')
+place4 = Place.create!(name: 'FitFabric', category: Category.first, location: 'Allenby 14, Tel Aviv')
+place5 = Place.create!(name: 'Aida', category: Category.first, location: 'Jabotinsky 14, Tel Aviv')
+place6 = Place.create!(name: 'European Swimming Championships', category: Category.first, location: 'Herzeliya, Israel')
+place7 = Place.create!(name: 'Olim in Tech', category: Category.last, location: 'Levinsky 14, Tel Aviv')
+place8 = Place.create!(name: 'Type O Negative', category: Category.last, location: 'HaYarkon 14, Tel Aviv')
+place9 = Place.create!(name: 'Dead Can Dance', category: Category.last, location: 'Eilat 14, Tel Aviv')
+place10 = Place.create!(name: 'Holmes Place', category: Category.last, location: 'King George 14, Tel Aviv')
 
-place1 = Place.create!(name: 'Yoga 4 U', category: category1, location: 'Ben Yehuda 32, Tel Aviv')
-place2 = Place.create!(name: 'Yoga Sababa', category: category1, location: 'Bograshov 14, Tel Aviv')
-place3 = Place.create!(name: 'Space', category: category3, location: 'Sheinkin 42, Tel Aviv')
-place4 = Place.create!(name: 'FitFabric', category: category3, location: 'Allenby 14, Tel Aviv')
-place5 = Place.create!(name: 'Aida', category: category4, location: 'Jabotinsky 14, Tel Aviv')
-place6 = Place.create!(name: 'European Swimming Championships', category: category6, location: 'Herzeliya, Israel')
-place7 = Place.create!(name: 'Olim in Tech', category: category5, location: 'Levinsky 14, Tel Aviv')
-place8 = Place.create!(name: 'Type O Negative', category: category2, location: 'HaYarkon 14, Tel Aviv')
-place9 = Place.create!(name: 'Dead Can Dance', category: category2, location: 'Eilat 14, Tel Aviv')
-place10 = Place.create!(name: 'Holmes Place', category: category3, location: 'King George 14, Tel Aviv')
-
-preference1 = Preference.create!(user: user, category: category5)
-preference2 = Preference.create!(user: user, category: category4)
-preference3 = Preference.create!(user: user, category: category3)
-
+preference1 = Preference.create!(user: user, category: Category.first)
+preference2 = Preference.create!(user: user, category: Category.last)
+preference3 = Preference.create!(user: user, category: Category.first)
 puts "done"
+
