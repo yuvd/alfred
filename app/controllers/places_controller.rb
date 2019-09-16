@@ -3,6 +3,23 @@ class PlacesController < ApplicationController
   SEARCH_PATH = "/v3/businesses/search"
   BUSINESS_PATH = "/v3/businesses/"
   API_KEY = ENV["YELP_API"]
+  
+  def index
+    @categories = Category.includes(:preferences).where(preferences: { user: current_user })
+    if params[:category]
+      @places = Place.where(category: Category.find_by(name: params[:category]))
+    else
+      @places = Place.all
+    end
+    @places
+  end
+
+  def show
+    @categories = Category.includes(:preferences).where(preferences: { user: current_user })
+    @place = Place.find(params[:id])
+    # @bookmark = Bookmark.new
+  end
+  
 
 
   def map
@@ -16,7 +33,6 @@ class PlacesController < ApplicationController
   end
 
 
-
   def get_businesses(term, location)
     url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
@@ -27,3 +43,4 @@ class PlacesController < ApplicationController
     @places = response.parse["businesses"]
   end
 end
+

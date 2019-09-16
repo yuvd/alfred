@@ -10,6 +10,7 @@ Place.destroy_all
 Preference.destroy_all
 Category.destroy_all
 User.destroy_all
+
 CategoryService.new.perform
 
 user = User.create!(email: 'robert@gmail.com', password: '123456')
@@ -29,3 +30,4 @@ preference1 = Preference.create!(user: user, category: Category.first)
 preference2 = Preference.create!(user: user, category: Category.last)
 preference3 = Preference.create!(user: user, category: Category.first)
 puts "done"
+
