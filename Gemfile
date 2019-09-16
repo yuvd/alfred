@@ -10,6 +10,7 @@ gem 'pundit'
 gem 'rails', '5.2.3'
 gem 'redis'
 gem 'money-rails'
+gem 'http'
 
 
 gem 'autoprefixer-rails'
