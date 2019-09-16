@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :user, only: [:show]
-  resources :preferences
+  resources :user, only: [:show] do
+    resources :preferences
+  end
   resources :bookmarks
+
+
+  get 'places/map', to: 'places#map', as: 'map'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

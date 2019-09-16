@@ -1,2 +1,14 @@
-<h1>Preferences#new</h1>
-<p>Find me in app/views/preferences/new.html.erb</p>
+<h1>Last step.</h1>
+<p>Choose your preferences</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+        <%= simple_form_for ([@user, @preference]) do |f| %>
+          <%= f.association :category, as: :check_boxes %>
+
+          <%= f.submit "Save", class: "btn btn-primary"  %>
+        <% end %>
+    </div>
+  </div>
+</div>

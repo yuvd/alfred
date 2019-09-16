@@ -1,6 +1,7 @@
 class PreferencesController < ApplicationController
   def index
     @preferences = Preference.all
+    @user = current_user
   end
 
   def show
@@ -9,12 +10,19 @@ class PreferencesController < ApplicationController
 
   def new
     @preference = Preference.new
+    @user = current_user
   end
 
   def create
-    @preference = Preference.new(preference_params)
-    @preference.save!
+    params[:preference][:category_id].each do | id |
+      category = Category.find(id) unless id == ""
+      preference = Preference.new(category: category, user: current_user)
+      preference.save
+    end
+    redirect_to root_path
+
   end
+
 
   def edit
     @preference = Preference.find(params[:id])
@@ -29,6 +37,6 @@ class PreferencesController < ApplicationController
   end
 
   def preference_params
-    params.require(:preferences).permit(:category, :user)
+    params.require(:preference).permit(:category, :user)
   end
 end
