@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
 get 'places/map', to: 'places#map', as: 'map'
-
+get 'profile', to: 'users#index', as: 'profile'
 
   resources :places do
     resources :bookmarks, only: [:new, :create]
