@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
   SEARCH_PATH = "/v3/businesses/search"
   BUSINESS_PATH = "/v3/businesses/"
   API_KEY = ENV["YELP_API"]
-  
+
   def index
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
     if params[:category]
@@ -19,7 +19,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     # @bookmark = Bookmark.new
   end
-  
+
 
 
   def map
