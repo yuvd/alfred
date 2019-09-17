@@ -20,7 +20,6 @@ class PreferencesController < ApplicationController
       preference.save
     end
     redirect_to root_path
-
   end
 
 

@@ -1,0 +1,27 @@
+<h1>Places#show</h1>
+<p>Find me in app/views/places/show.html.erb</p>
+
+<% @categories.each do |category| %>
+  <%= link_to category.name, places_path(category: category.name) %>
+<% end %>
+
+<h2><%= @place.name %></h2>
+<p><%= @place.location %></p>
+<% if @place.price_cents == 0 %>
+  <p> $ </p>
+<% end %>
+<h5>DESCRIPTION</h5>
+<p><%= @place.description %></p>
+
+
+<%= button_to "Add to your list", new_place_bookmark_path(@place), method: "get", class: "btn btn-primary mb-2" %>
+<%= button_to "Add to your schedule", new_place_bookmark_path(@place), method: "get", class: "btn btn-primary" %>
+
+
+
+<div id="rateYo"></div>
+<script>
+  console.log("yo!!!");
+  $("#rateYo");
+
+</script>

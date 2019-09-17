@@ -1,14 +1,25 @@
+
+<div class="container">
+
+ <div class="d-flex justify-content-start icons_profile">
+  <a ><%= image_tag 'Infos.png', :class => "image-profile-3" %></a>
+  <a ><%= image_tag 'Hobbies.png', :class => "image-profile-4" %></a>
+</div>
+
 <h1>Last step.</h1>
 <p>Choose your preferences</p>
 
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-6">
         <%= simple_form_for ([@user, @preference]) do |f| %>
+        <div class="row">
+          <div class="col-xs-4">
           <%= f.association :category, as: :check_boxes %>
-
-          <%= f.submit "Save", class: "btn btn-primary"  %>
+          </div>
+        </div>
+          <%= f.submit "Save", class: "button-profile"  %>
         <% end %>
-    </div>
   </div>
+</div>
 </div>
