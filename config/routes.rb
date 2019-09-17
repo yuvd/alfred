@@ -6,11 +6,15 @@ Rails.application.routes.draw do
 
 get 'places/map', to: 'places#map', as: 'map'
 
-  resources :places
+
+  resources :places do
+    resources :bookmarks, only: [:new, :create]
+  end
+
   resources :categories
   resources :user, only: [:show] do
-    resources :bookmarks
     resources :preferences
+    resources :bookmarks, except: [:new, :create]
   end
 
 
