@@ -11,13 +11,14 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    authoriye @user
+
   end
 
   def update
     @user = User.find(params[:id])
     authorize @user
     @user.update(user_params)
+    redirect_to profile_path
   end
 
 def user_params
