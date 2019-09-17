@@ -1,5 +1,10 @@
 class PlacesController < ApplicationController
-  
+
+  API_HOST = "https://api.yelp.com"
+  SEARCH_PATH = "/v3/businesses/search"
+  BUSINESS_PATH = "/v3/businesses/"
+  API_KEY = ENV["YELP_API"]
+
   def index
     Businesses.get_businesses
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
