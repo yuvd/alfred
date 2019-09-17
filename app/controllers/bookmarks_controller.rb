@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   def index
-    @bookmarks = policy_scope(@Restaurant)
+    @bookmarks = Bookmark.all
+    #@bookmarks = policy_scope(Bookmark)
   end
 
   def show
@@ -12,8 +13,10 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
+    @bookmark.user = current_user
+    @bookmark.place = Place.find(params[:place_id])
     @bookmark.save!
-    redirect_to '/'
+    redirect_to user_bookmark_path(current_user, @bookmark)
   end
 
   def update
@@ -26,6 +29,6 @@ class BookmarksController < ApplicationController
   end
 
   def bookmark_params
-    params.require(:bookmarks).permit(:place, :user, :time)
+    params.require(:bookmark).permit(:place, :user, :time)
   end
 end

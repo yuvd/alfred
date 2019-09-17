@@ -1,0 +1,4 @@
+<%= simple_form_for [:place, @bookmark] do |f| %>
+  <%= f.input :time, as: :datetime %>
+  <%= f.submit "Add to schedule", class: "btn btn-primary" %>
+<% end %>

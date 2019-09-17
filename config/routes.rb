@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   
-  resources :places
+  resources :places do
+    resources :bookmarks, only: [:new, :create]
+  end
   resources :categories
   resources :user, only: [:show] do
-    resources :bookmarks
     resources :preferences
+    resources :bookmarks, except: [:new, :create]
   end
   
   get 'places/map', to: 'places#map', as: 'map'
