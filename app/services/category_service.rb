@@ -23,12 +23,12 @@ class CategoryService
 
   def generate_wikipedia_categories
     wikipedia_categories_doc = get_doc("https://en.wikipedia.org/wiki/List_of_hobbies")
-    wikipedia_categories = wikipedia_categories_doc.search('.mw-parser-output .div-col ul li > a').map(&:text)
+    return wikipedia_categories = wikipedia_categories_doc.search('.mw-parser-output .div-col ul li > a').map(&:text)
   end
 
   def generate_possible_categories
     possible_categories_doc = get_doc("https://blog.yelp.com/2018/01/yelp_category_list")
-    possible_categories = possible_categories_doc.search('.entry-content ul li span').map(&:text)
+    return possible_categories = possible_categories_doc.search('.entry-content ul li span').map(&:text)
   end
 
   def get_doc(url)
