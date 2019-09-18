@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :categories
   # resources :user, only: [:show] do
   resources :bookmarks, except: [:new, :create]
-  resources :users, only: [] do
+  resources :users, only: [:update] do
     resources :preferences
   end
   # end

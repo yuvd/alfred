@@ -8,14 +8,16 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-
   end
 
   def update
     @user = User.find(params[:id])
-    authorize @user
     @user.update(user_params)
-    redirect_to profile_path
+    if params[:from] == 'landing'
+      redirect_to places_path
+    else
+      redirect_to profile_path
+    end
   end
 
 def user_params

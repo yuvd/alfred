@@ -1,27 +1,20 @@
 
-<div class="box_page">
-<input type="search" id="address" class="form-control" placeholder="Where are we going?" />
+<div class="container">
 
-<script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4"></script>
+<%= simple_form_for(@user) do |f| %>
+<div class="box_page"><%= f.input :location, input_html: { id: "address"}, label: false, placeholder: "Enter your location" %></div>
+<%= hidden_field_tag :from, "landing" %>
 
-</div>
+<%# f.submit "Save", class: "button"  %>
 
-<script>
-(function() {
-  var placesAutocomplete = places({
-    appId: '<%= ENV['ALGOLIA_API_ID'] %>',
-    apiKey: '<%= ENV['ALGOLIA_API_KEY'] %>',
-    container: document.querySelector('#address')
-  });
+<% end %>
 
-  var $address = document.querySelector('#address-value')
-  placesAutocomplete.on('change', function(e) {
-    $address.textContent = e.suggestion.value
-  });
 
-  placesAutocomplete.on('clear', function() {
-    $address.textContent = 'none';
-  });
 
-})();
-</script>
+
+
+
+
+
+
+
