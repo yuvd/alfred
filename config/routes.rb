@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   # get 'reviews/new'
   # get 'reviews/create'
   # get 'places/businesses'
-  devise_for :users
+
   root to: 'pages#home'
+  devise_for :users, controllers: { registrations: "registrations" }
 
 
   get 'places/map', to: 'places#map', as: 'map'
@@ -20,7 +21,9 @@ Rails.application.routes.draw do
   resources :categories
   # resources :user, only: [:show] do
   resources :bookmarks, except: [:new, :create]
-  resources :preferences
+  resources :users, only: [] do
+    resources :preferences
+  end
   # end
 
 

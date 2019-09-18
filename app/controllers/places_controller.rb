@@ -15,11 +15,15 @@ class PlacesController < ApplicationController
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
     @place = Place.find(params[:id])
     @reviews = @place.reviews.to_a
-    @avg_rating = if @reviews.blank?
-                    0
-                  else
-                    @place.reviews.average(:rating).floor
-                  end
+#
+#     @avg_rating = if @reviews.blank?
+#                     0
+#                   else
+#                     @place.reviews.average(:rating).floor
+#                   end
+#
+    @avg_rating = @reviews.blank? ? 0 : @place.reviews.average(:rating).floor
+    @bookmark = Bookmark.new
   end
 
 
