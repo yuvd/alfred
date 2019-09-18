@@ -2,32 +2,55 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs registration">
+    <div class="box_page mb-3">
      <%= f.input :name,
                 required: true,
                 autofocus: true,
+                placeholder: "Name",
                 input_html: { autocomplete: "name" }%>
+    </div>
+    <div class="box_page mb-3">
     <%= f.input :nickname,
                 required: true,
                 autofocus: true,
+                placeholder: "Nickname",
                 input_html: { autocomplete: "nickname" }%>
+   </div>
+    <div class="box_page mb-3">
     <%= f.input :email,
                 required: true,
                 autofocus: true,
+                placeholder: "E-mail",
                 input_html: { autocomplete: "email" }%>
+    </div>
+    <div class="box_page mb-3">
     <%= f.input :location,
                 required: true,
                 autofocus: true,
+                placeholder: "Location",
                 input_html: { autocomplete: "location" }%>
+    </div>
+
+    <div class="box_page mb-3">
     <%= f.input :password,
                 required: true,
+
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                placeholder: "Password",
                 input_html: { autocomplete: "new-password" } %>
+    </div>
+
+    <div class="box_page mb-3">
     <%= f.input :password_confirmation,
                 required: true,
+                placeholder: "Password_confirmation",
                 input_html: { autocomplete: "new-password" } %>
+           </div>
+    <div class="mt-5">
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
+    </div>
   </div>
 
 

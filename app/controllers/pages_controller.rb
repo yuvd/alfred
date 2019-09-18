@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
+    render layout: 'homepage'
     # redirect_to places_path
   end
 
