@@ -6,5 +6,7 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @preferences = Preference.where(user: current_user)
+    @user = current_user
   end
 end
