@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_16_124526) do
+ActiveRecord::Schema.define(version: 2019_09_17_132824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 2019_09_16_124526) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "forums", force: :cascade do |t|
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "places", force: :cascade do |t|
     t.string "location"
     t.string "name"
@@ -46,6 +52,17 @@ ActiveRecord::Schema.define(version: 2019_09_16_124526) do
     t.index ["category_id"], name: "index_places_on_category_id"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "user_id"
+    t.bigint "forum_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["forum_id"], name: "index_posts_on_forum_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "preferences", force: :cascade do |t|
     t.bigint "category_id"
     t.bigint "user_id"
@@ -53,6 +70,17 @@ ActiveRecord::Schema.define(version: 2019_09_16_124526) do
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_preferences_on_category_id"
     t.index ["user_id"], name: "index_preferences_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.bigint "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_reviews_on_place_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,6 +102,10 @@ ActiveRecord::Schema.define(version: 2019_09_16_124526) do
   add_foreign_key "bookmarks", "places"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "places", "categories"
+  add_foreign_key "posts", "forums"
+  add_foreign_key "posts", "users"
   add_foreign_key "preferences", "categories"
   add_foreign_key "preferences", "users"
+  add_foreign_key "reviews", "places"
+  add_foreign_key "reviews", "users"
 end

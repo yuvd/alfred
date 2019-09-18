@@ -3,7 +3,7 @@ class PlacesController < ApplicationController
   SEARCH_PATH = "/v3/businesses/search"
   BUSINESS_PATH = "/v3/businesses/"
   API_KEY = ENV["YELP_API"]
-  
+
   def index
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
     if params[:category]
@@ -17,10 +17,14 @@ class PlacesController < ApplicationController
   def show
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
     @place = Place.find(params[:id])
+    @reviews = @place.reviews.to_a
+    @avg_rating = if @reviews.blank?
+                    0
+                  else
+                    @place.reviews.average(:rating).floor
+                  end
     # @bookmark = Bookmark.new
   end
-  
-
 
   def map
     @places = Place.geocoded
@@ -31,7 +35,6 @@ class PlacesController < ApplicationController
       }
     end
   end
-
 
   def get_businesses(term, location)
     url = "#{API_HOST}#{SEARCH_PATH}"
