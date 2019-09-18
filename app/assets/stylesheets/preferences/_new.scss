@@ -36,3 +36,24 @@
 .col-form-label {
   display: none;
 }
+
+.form-control-label {
+  display: none;
+  color: white;
+}
+
+.text-muted {
+  display: none;
+}
+
+input {
+    background: transparent !important;
+  }
+
+.form-control:focus, input:focus, textarea:focus, select:focus{
+  color: white !important;
+  border-color: transparent !important;
+  box-shadow: none;
+}
+
+

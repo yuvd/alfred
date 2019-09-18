@@ -1,8 +1,15 @@
 .form-control {
   background-color: transparent;
   border: none;
+  color: white;
+  font-size: 25px;
+  margin-bottom: -15px;
 }
 
 #address {
   border: none;
+}
+
+.ap-dataset-places {
+  color: black !important;
 }
