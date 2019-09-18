@@ -16,7 +16,7 @@ class BookmarksController < ApplicationController
     @bookmark.user = current_user
     @bookmark.place = Place.find(params[:place_id])
     @bookmark.save!
-    redirect_to user_bookmark_path(current_user, @bookmark)
+    redirect_to bookmarks_path
   end
 
   def update
