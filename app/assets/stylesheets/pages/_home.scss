@@ -28,3 +28,20 @@ background-size:cover;
 }
 
 
+.button-registration {
+  border: 1px solid grey;
+  background: #69A297 !important;
+  width: 350px;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .6;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 2px 2px #ff0000;
+  margin-top: 350px !important;
+
+  &:hover {
+    background: black;
+  }
+}

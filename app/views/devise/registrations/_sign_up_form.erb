@@ -3,14 +3,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs registration">
-    <div class="box_page mb-3">
+    <div class="box_page mb-3 force-select-all">
      <%= f.input :name,
                 required: true,
                 autofocus: true,
                 placeholder: "Name",
                 input_html: { autocomplete: "name" }%>
     </div>
-    <div class="box_page mb-3">
+    <div class="box_page mb-3 force-select-all">
     <%= f.input :nickname,
                 required: true,
                 autofocus: true,

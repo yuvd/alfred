@@ -2,11 +2,21 @@
 <div class="container profile_index">
 
   <div class="d-flex justify-content-start">
-    <%= cl_image_tag @user.photo, height: 50, width: 50, crop: :fill, :class => "avatar" %>
-    <h1>Your Profile</h1>
+
+    <div class="avatar">
+      <% if current_user.photo.blank? %>
+        <%= image_tag "Placeholder-Avatar.jpg" %>
+        <% else %>
+        <%= cl_image_tag "current_user.photo" %>
+      <% end %>
+    </div>
+
+    <div>
+      <h1>Your Profile</h1>
+    </div>
   </div>
 
-  <div class="d-flex justify-content-start">
+  <div class="d-flex justify-content-start mt-5">
     <p>  ----  INFOS </p>
     <%# link_to edit_user_path (current_user) do %>
     <i class="fa fa-pencil-alt"></i>
