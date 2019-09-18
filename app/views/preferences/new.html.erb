@@ -1,23 +1,28 @@
 
 <div class="container">
 
- <div class="d-flex justify-content-start icons_profile">
-  <a ><%= image_tag 'Infos.png', :class => "image-profile-3" %></a>
-  <a ><%= image_tag 'Hobbies2.png', :class => "image-profile-4" %></a>
-</div>
+   <div class="d-flex justify-content-start icons_profile">
+    <a ><%= image_tag 'Infos.png', :class => "image-profile-3" %></a>
+    <a ><%= image_tag 'Hobbies2.png', :class => "image-profile-4" %></a>
+  </div>
 
-<h1>Last step.</h1>
-<p>Choose your preferences, <%= current_user.name %></p>
 
-    <div class="row preferences">
-          <%= simple_form_for([@user, @preference]) do |f| %>
-            <div class="col-4">
+  <div class="ml-3">
+    <h1>Last step.</h1>
+    <p>Choose your preferences, <%= current_user.name %></p>
+  </div>
 
-            <%= f.association :category, as: :check_boxes %>
-            <%= f.submit "Save", class: "button-profile"  %>
+  <div class="row preferences">
+    <%= simple_form_for([@user, @preference]) do |f| %>
+    <div class="col-6">
 
-            </div>
-          <% end %>
+      <%= f.association :category, as: :check_boxes %>
     </div>
+    <%= f.submit "Save", class: "button-profile"  %>
+
+  </div>
+<% end %>
+
 
 </div>
+
