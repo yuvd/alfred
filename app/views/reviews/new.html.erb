@@ -1,0 +1,14 @@
+<h1>Reviews#new</h1>
+<p>Find me in app/views/reviews/new.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <%= simple_form_for([@place, @review] , html: { class: "review_form" }) do |f| %>
+        <% f.input :content, class:"d-none" %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
+        <%= f.button :submit, class:"d-none" %>
+      <% end %>
+    </div>
+  </div>
+</div>
