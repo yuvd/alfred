@@ -1,2 +1,23 @@
-<h1>Preferences#edit</h1>
-<p>Find me in app/views/preferences/edit.html.erb</p>
+<div class="container">
+
+ <div class="d-flex justify-content-start icons_profile">
+  <a ><%= image_tag 'Infos.png', :class => "image-profile-3" %></a>
+  <a ><%= image_tag 'Hobbies.png', :class => "image-profile-4" %></a>
+</div>
+
+<h1>Update your preferences</h1>
+
+
+<div class="container">
+  <div class="row">
+        <%= simple_form_for ([@user, @preference]) do |f| %>
+        <div class="row">
+          <div class="col-xs-4">
+          <%= f.association :category, as: :check_boxes %>
+          </div>
+        </div>
+          <%= f.submit "Save", class: "button-profile"  %>
+        <% end %>
+  </div>
+</div>
+</div>

@@ -1,36 +1,43 @@
 
-<h1>Places#index</h1>
-<p>Find me in app/views/places/index.html.erb</p>
-
-
-<!-- Control buttons -->
-<div id="myBtnContainer">
-  <%= link_to "Yoga", places_path(category: "Yoga") %>
-  <%= link_to "Concerts", places_path(category: "Concerts") %>
-  <%= link_to "Spectacles", places_path(category: "Spectacles") %>
-  <%= link_to "Job fairs", places_path(category: "Job fairs") %>
-  <%= link_to "Sports Championships", places_path(category: "Sports championships") %>
-
-</div>
-
-<!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
 <div class="container">
-  <% @places.each do |place| %>
-  <%= place.name %>
-  <% end %>
-</div>
+  <h1>Places#index</h1>
+  <p>Find me in app/views/places/index.html.erb</p>
 
 
-<% @categories.each do |category| %>
-  <%= link_to category.name, places_path(category: category.name) %>
-<% end %>
+  <!-- Control buttons -->
+  <div id="myBtnContainer">
+    <%= link_to "Yoga", places_path(category: "Yoga") %>
+    <%= link_to "Concerts", places_path(category: "Concerts") %>
+    <%= link_to "Spectacles", places_path(category: "Spectacles") %>
+    <%= link_to "Job fairs", places_path(category: "Job fairs") %>
+    <%= link_to "Sports Championships", places_path(category: "Sports championships") %>
 
-<div class="container">
-  <% @places.each do |place| %>
-    <%= link_to place_path(place) do %>
-      <%= place.name %>
-      <%= place.location %>
+  </div>
+
+  <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+  <div class="container">
+    <% @places.each do |place| %>
+    <%= place.name %>
     <% end %>
+  </div>
+
+
+  <% @categories.each do |category| %>
+    <%= link_to category.name, places_path(category: category.name) %>
+  <% end %>
+
+  <div class="container">
+    <% @places.each do |place| %>
+      <%= link_to place_path(place) do %>
+        <%= place.name %>
+        <%= place.location %>
+      <% end %>
+    <% end %>
+  </div>
+
+<div class="mt-5">
+  <%= link_to map_path do %>
+    <i class="fa fa-map-marked-alt text-secondary"></i>
   <% end %>
 </div>
-
+</div>

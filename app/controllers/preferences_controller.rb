@@ -1,8 +1,5 @@
 class PreferencesController < ApplicationController
-  def index
-    @preferences = Preference.all
-    @user = current_user
-  end
+
 
   def show
     @preference = Preference.find(params[:id])
@@ -20,7 +17,6 @@ class PreferencesController < ApplicationController
       preference.save
     end
     redirect_to root_path
-
   end
 
 

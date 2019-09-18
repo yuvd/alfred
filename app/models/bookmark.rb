@@ -1,4 +1,4 @@
 class Bookmark < ApplicationRecord
-  belongs_to :user_id
-  belongs_to :place_id
+  belongs_to :user
+  belongs_to :place
 end

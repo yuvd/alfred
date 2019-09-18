@@ -13,6 +13,7 @@
 <h5>DESCRIPTION</h5>
 <p><%= @place.description %></p>
 
+
 <div class="star-rating" data-score=<%= @avg_rating %> > <% (1..@avg_rating).each do %>
   *
   <% end %>
@@ -30,6 +31,11 @@
     <% end %>
   </div>
 </div>
+
+<%= button_to "Add to your list", new_place_bookmark_path(@place), method: "get", class: "btn btn-primary mb-2" %>
+<%= button_to "Add to your schedule", new_place_bookmark_path(@place), method: "get", class: "btn btn-primary" %>
+
+
 
 <div id="rateYo"></div>
 <script>
