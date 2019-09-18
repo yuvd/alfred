@@ -1,7 +1,6 @@
 class PlacesController < ApplicationController
 
   def index
-
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
     if params[:category]
       @places = Place.where(category: Category.find_by(name: params[:category]))
@@ -12,9 +11,16 @@ class PlacesController < ApplicationController
   end
 
   def show
+    #@bookmark = Bookmark.new
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
     @place = Place.find(params[:id])
     @reviews = @place.reviews.to_a
+#     @avg_rating = if @reviews.blank?
+#                     0
+#                   else
+#                     @place.reviews.average(:rating).floor
+#                   end
+
     @avg_rating = @reviews.blank? ? 0 : @place.reviews.average(:rating).floor
     @bookmark = Bookmark.new
   end

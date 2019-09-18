@@ -22,6 +22,8 @@
   <p><%= @place.description %></p>
 
 
+<%= button_to "Add to your list", place_bookmarks_path(@place), method: "post", class: "btn btn-primary mb-2", params: {list: true} %>
+<%= button_to "Add to your schedule", new_place_bookmark_path(@place), method: "get", class: "btn btn-primary" %>
   <p>
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       Add to schedule
