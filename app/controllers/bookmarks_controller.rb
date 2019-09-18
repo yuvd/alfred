@@ -9,14 +9,17 @@ class BookmarksController < ApplicationController
 
   def new
     @bookmark = Bookmark.new
+    if params['list'] == 'true'
+      redirect_to place_bookmarks_path(params[:place_id]), method: :post
+    end
   end
 
   def create
-    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark = Bookmark.new()
     @bookmark.user = current_user
     @bookmark.place = Place.find(params[:place_id])
     @bookmark.save!
-    redirect_to user_bookmark_path(current_user, @bookmark)
+    redirect_to bookmarks_path
   end
 
   def update
@@ -28,7 +31,7 @@ class BookmarksController < ApplicationController
   def delete
   end
 
-  def bookmark_params
-    params.require(:bookmark).permit(:place, :user, :time)
-  end
+  # def bookmark_params
+  #   params.require(:bookmark).permit(:time)
+  # end
 end
