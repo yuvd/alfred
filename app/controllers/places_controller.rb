@@ -1,7 +1,6 @@
 class PlacesController < ApplicationController
 
   def index
-
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
     if params[:category]
       @places = Place.where(category: Category.find_by(name: params[:category]))
