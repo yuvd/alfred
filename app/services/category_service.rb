@@ -12,11 +12,12 @@ class CategoryService
     actual_categories = []
     
     wikipedia_categories.each do |w_cat|
-      actual_categories.push(w_cat) if possible_categories.include?(w_cat)
+      actual_categories.push(w_cat) if possible_categories.include?(w_cat) && !actual_categories.include?(w_cat)
     end
 
     actual_categories.push("Gym")
     actual_categories.push("Pharmacies")
+    actual_categories.push("Swimming")
     
     return actual_categories
   end
