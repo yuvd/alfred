@@ -1,0 +1,27 @@
+
+<div class="box_page">
+<input type="search" id="address" class="form-control" placeholder="Where are we going?" />
+
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4"></script>
+
+</div>
+
+<script>
+(function() {
+  var placesAutocomplete = places({
+    appId: '<%= ENV['ALGOLIA_API_ID'] %>',
+    apiKey: '<%= ENV['ALGOLIA_API_KEY'] %>',
+    container: document.querySelector('#address')
+  });
+
+  var $address = document.querySelector('#address-value')
+  placesAutocomplete.on('change', function(e) {
+    $address.textContent = e.suggestion.value
+  });
+
+  placesAutocomplete.on('clear', function() {
+    $address.textContent = 'none';
+  });
+
+})();
+</script>

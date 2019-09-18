@@ -1,45 +1,48 @@
-<h1>Places#show</h1>
-<p>Find me in app/views/places/show.html.erb</p>
 
 <% @categories.each do |category| %>
-  <%= link_to category.name, places_path(category: category.name) %>
+<%= link_to category.name, places_path(category: category.name) %>
 <% end %>
 
-<h2><%= @place.name %></h2>
-<p><%= @place.location %></p>
-<% if @place.price_cents == 0 %>
-  <p> $ </p>
-<% end %>
-<h5>DESCRIPTION</h5>
-<p><%= @place.description %></p>
+<div class="box">
 
-
-<div class="star-rating" data-score=<%= @avg_rating %> > <% (1..@avg_rating).each do %>
-  *
+  <h2><%= @place.name %></h2>
+  <p><%= @place.location %></p>
+  <% if @place.price_cents == 0 %>
+    <p> $ </p>
   <% end %>
-</div>
-<em><%= "based on #{@reviews.size} reviews" %></em>
 
-<div class="container">
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-    <h2>Flatpickr Demo</h2>
 
-    <%= simple_form_for :search, method: "get" do |f| %>
-      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <% f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "schedule this item", class: "btn btn-primary" %>
+  <div class="star-rating"> <% (1..@avg_rating).each do %>
+    *
     <% end %>
   </div>
-</div>
+  <p><em><%= "based on #{@reviews.size} reviews" %></em></p>
+
+  <h5>DESCRIPTION</h5>
+  <p><%= @place.description %></p>
+
 
 <%= button_to "Add to your list", place_bookmarks_path(@place), method: "post", class: "btn btn-primary mb-2", params: {list: true} %>
 <%= button_to "Add to your schedule", new_place_bookmark_path(@place), method: "get", class: "btn btn-primary" %>
+  <p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Add to schedule
+    </button>
+  </p>
+
+  <div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <div class="container">
+    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+      <h2>Flatpickr Demo</h2>
+
+      <%= render 'bookmarks/form' %>
+    </div>
+  </div>
+  </div>
+</div>
+
+</div>
 
 
 
-<div id="rateYo"></div>
-<script>
-  console.log("yo!!!");
-  $("#rateYo");
-
-</script>
