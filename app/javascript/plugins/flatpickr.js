@@ -1,4 +1,6 @@
+console.log("lick my **")
+
 import flatpickr from "flatpickr"
 import "flatpickr/dist/themes/dark.css" // Note this is important!
 
-flatpickr(".datepicker", { enableTime: true })
+flatpickr(".datepicker", { enableTime: true, disableMobile: true })
