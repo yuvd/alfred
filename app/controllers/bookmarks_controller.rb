@@ -1,12 +1,11 @@
 class BookmarksController < ApplicationController
   def index
     @bookmarks = Bookmark.where(user: current_user, time: nil)
-
     @bookmarks_list = []
     @bookmarks.each do |bm|
       @bookmarks_list << bm unless bookmarks_list.include?(bm)
     end
-    @bookmarks_schedule = Bookmark.where(user: current_user, time: !nil)
+    @bookmarks_schedule = current_user.bookmarks.select{ |bm| !bm.time.nil? }
     #@bookmarks = policy_scope(Bookmark)
   end
 
@@ -24,6 +23,8 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new()
     @bookmark.user = current_user
     @bookmark.place = Place.find(params[:place_id])
+    binding.pry
+
     @bookmark.time = params[:bookmark][:time].to_datetime
     @bookmark.save!
     redirect_to bookmarks_path
