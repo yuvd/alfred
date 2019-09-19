@@ -12,8 +12,9 @@
     <p class="mt-5">I am Alfred, your personal Assistant.</p>
     <p>Where do you want to go?</p>
 
-
+  
       <%= render 'address_form.erb' %>
+
 
      <div class="nav-item dropdown mt-3 d-flex justify-content-center">
 
@@ -35,9 +36,8 @@
             <%= link_to "Profile", profile_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
-        </div>
+        </div> 
 <% else %>
-
 <h1 class="mt-5"> Hi friend,</h1>
 <p class="mt-5 ">I am Alfred, your personal Assistant.</p>
     <p>I would love to get to know you.</p>
