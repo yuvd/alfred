@@ -11,14 +11,13 @@ class PreferencesController < ApplicationController
   end
 
   def create
-    params[:preference][:category_id].each do | id |
+    params[:preferences][:category_ids].each do | id |
       category = Category.find(id) unless id == ""
       preference = Preference.new(category: category, user: current_user)
       preference.save
     end
     redirect_to root_path
   end
-
 
   def edit
     @preference = Preference.find(params[:id])

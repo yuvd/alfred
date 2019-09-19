@@ -1,53 +1,73 @@
 
-<div class="container profile_index">
+<div class="container profile_index" id="vh">
 
   <div class="d-flex justify-content-start">
 
-    <div class="avatar">
-      <% if current_user.photo.blank? %>
-        <%= image_tag "Placeholder-Avatar.jpg" %>
-        <% else %>
-        <%= cl_image_tag "current_user.photo" %>
-      <% end %>
+      <div class="avatar">
+        <% if current_user.photo.blank? %>
+          <%= image_tag "Placeholder-Avatar.jpg" %>
+          <% else %>
+          <%= cl_image_tag "current_user.photo" %>
+        <% end %>
+      </div>
+
+      <div>
+        <h1 class="ml-3">Your Profile</h1>
+      </div>
+    </div>
+    <div class="card">
+    <div class="ml-3">
+      <div class="d-flex justify-content-start mt-5">
+        <p>  ----  INFOS </p>
+        <%# link_to edit_user_path (current_user) do %>
+       <p class="ml-2"> <i class="fa fa-pencil-alt"></i></p>
+        <%# end %>
+      </div>
+
+    <div class="d-flex justify-content-start mt-1">
+      <p class="mr-3"><i class="fa fa-signature"></i></p>
+      <p><%= current_user.name %></p>
     </div>
 
-    <div>
-      <h1>Your Profile</h1>
+    <div class="d-flex justify-content-start mt-1">
+      <p class="mr-3"><i class="fa fa-signature"></i></p>
+      <p><%= current_user.nickname %></p>
+    </div>
+      <div class="d-flex justify-content-start mt-1">
+        <p class="mr-3"><i class="fa fa-city"></i></p>
+        <p><%= current_user.location %></p>
+       </div>
+
+<div class="d-flex justify-content-start mt-1">
+        <p class="mr-3"><i class="fa fa-unlock-alt"></i></p>
+      <p>change password </p>
+      </div>
     </div>
   </div>
 
-  <div class="d-flex justify-content-start mt-5">
-    <p>  ----  INFOS </p>
-    <%# link_to edit_user_path (current_user) do %>
-    <i class="fa fa-pencil-alt"></i>
-    <%# end %>
-  </div>
-  <p><%= current_user.name %></p>
-  <p><%= current_user.nickname %></p>
-  <p><%= current_user.location %></p>
-  <p>change password </p>
+  <div class="card">
+    <div class="ml-3">
+      <div class="d-flex justify-content-start mt-5">
+        <p> ---- PREFERENCES </p>
+
+        <%= link_to new_user_preference_path(current_user) do %>
+        <p class="ml-2"><i class="fa fa-pencil-alt"></i></p>
+        <% end %>
+      </div>
 
 
-
-
-  <div class="d-flex justify-content-start mt-5">
-    <p> ---- PREFERENCES </p>
-    <%= link_to new_user_preference_path(current_user) do %>
-    <i class="fa fa-pencil-alt"></i>
-    <% end %>
-  </div>
-
-
-  <div class="row">
-    <div class="col-xs-12">
-      <% @current_user.preferences.each do | preference | %>
-      <div class="row ml-3">
-        <div class="col-xs-12">
-          <%=  preference.category.name %>
+      <div class="row ">
+        <div class="col-xs-12 ">
+          <% @current_user.preferences.each do | preference | %>
+          <div class="row ml-3">
+            <div class="col-xs-12 view">
+              <%=  preference.category.name %>
+            </div>
+          </div>
+          <% end %>
         </div>
       </div>
-      <% end %>
-    </div>
+        </div>
   </div>
-
 </div>
+

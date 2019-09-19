@@ -1,34 +1,40 @@
 .image-profile-1 {
   height: 80px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-left: 20px;
   opacity: 0.6;
+  color: white;
+  margin-top: 25px;
 
 }
 
 .image-profile-2 {
   height: 70px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   margin-top: 7px;
   margin-left: 80px;
   opacity: 0.2;
+  margin-top: 32px;
 
 }
 
 .image-profile-3 {
-  height: 80px;
-  margin-bottom: 50px;
+ height: 80px;
+  margin-bottom: 30px;
   margin-left: 20px;
   opacity: 0.2;
+  color: white;
+  margin-top: 25px;
 
 }
 
 .image-profile-4 {
   height: 70px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   margin-top: 7px;
   margin-left: 80px;
   opacity: 0.6;
+  margin-top: 32px;
 
 }
 
@@ -44,4 +50,32 @@
 .avatar img {
   width: 56px;
   border-radius: 50%;
+}
+
+.preferences {
+  color: white;
+}
+
+.welcome-message h2 {
+  color: white;
+}
+
+.profile_index {
+  color: white;
+}
+
+#vh {
+min-height: calc(100vh - 56px)
+}
+
+.view {
+
+    width: 140px;
+      padding: 5px;
+      border-radius: 5px;
+      opacity: 1;
+      flex: 0 0 30%;
+      text-align: center;
+  margin-left: 27px;
+
 }

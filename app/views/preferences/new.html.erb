@@ -7,17 +7,31 @@
   </div>
 
 
-  <div class="ml-3">
+  <div class="ml-3 preferences">
     <h1>Last step.</h1>
     <p>Choose your preferences, <%= current_user.name %></p>
   </div>
 
   <div class="row preferences">
     <%= simple_form_for([@user, @preference]) do |f| %>
-    <div class="col-6">
+   <!--  <div class="col-xs-5">
 
-      <%= f.association :category, as: :check_boxes %>
-    </div>
+      <%#f.association :category, as: :check_boxes %>
+    </div> -->
+
+    <div class="form-group" id="last">
+    <div class="category-choices">
+    <% Category.all.each do |category| %>
+
+
+      <input type="checkbox" class="d-none choice" value="<%= category.id %>" name="preferences[category_ids][]" id="preferences_category_ids_<%= category.id %>">
+      <label for="preferences_category_ids_<%= category.id %>" class="preference-label">
+        <%= category.name %>
+      </label>
+
+    <% end %>
+   </div>
+</div>
     <%= f.submit "Save", class: "button-profile"  %>
 
   </div>
