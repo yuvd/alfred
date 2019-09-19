@@ -6,13 +6,13 @@ class PlacesController < ApplicationController
       unless Place.where({city: current_user.location, category: Category.find_by(name:params[:category])}).empty?
         @places = Place.where({city: current_user.location, category: Category.find_by(name:params[:category])})
       else
-        businesses = Businesses.get_businesses(params[:category], current_user.location) 
+        businesses = Businesses.get_businesses(params[:category], current_user.location)
         businesses.each do |business|
           if Place.find_by(name: business["name"]).nil?
-            unless business["location"]["address1"].nil?
+            unless business["location"]["address1"].blank?
               Place.create!(name: business["name"], location: business["location"]["address1"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: params[:category]))
             else
-              Place.create!(name: business["name"], location: "", longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: params[:category]))
+              Place.create!(name: business["name"], location: "#{current_user.location} Area", longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: params[:category]))
             end
           end
         end
