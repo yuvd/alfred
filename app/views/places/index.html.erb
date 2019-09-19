@@ -7,11 +7,12 @@
   <h1>Places</h1>
   <div class="container">
     <% @places.each do |place| %>
-      <%= link_to place_path(place) do %>
-        <h1><%= place.name %></h1>
-        <h5><%= place.location %></h5>
-      <% end %>
-    <% end %>
+          <%= link_to place_path(place) do %>
+            <h1><%= place&.name %></h1>
+            <h5><%= place&.location %></h5>
+          <%end%>
+         
+    <%end%>
   </div>
 
 <div class="mt-5">

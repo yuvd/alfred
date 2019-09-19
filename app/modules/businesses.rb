@@ -11,8 +11,15 @@ module Businesses
       location: location
     }
     response = HTTP.auth("Bearer #{@API_KEY}").get(url, params: params)
-    @places = response.parse["businesses"]
+    response.parse["businesses"]
+  end
+
+  def get_business(business_id)
+    url = "#{@API_HOST}#{BUSINESS_PATH}#{business_id}"
+    response = HTTP.auth("Bearer #{@API_KEY}").get(url)
+    response.parse
   end
 
   module_function :get_businesses
+  module_function :get_business
 end
