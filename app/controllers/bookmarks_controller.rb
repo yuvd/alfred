@@ -23,7 +23,6 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new()
     @bookmark.user = current_user
     @bookmark.place = Place.find(params[:place_id])
-    binding.pry
 
     @bookmark.time = params[:bookmark][:time].to_datetime
     @bookmark.save!
