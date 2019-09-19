@@ -4,52 +4,75 @@
 <% end %>
 
 <div class="box">
+  <div class="place_title">
+    <div class="container" id="rating">
+      <div class="row" id="row_rating">
+        <div class="star-rating">
+          <% if @avg_rating == 5 %>
+          <% 5.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+          <% else %>
+          <% @avg_rating.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - @avg_rating).times do %>
+          <i class="far fa-star"></i>
+          <% end %>
+          <% end %>
+        </div>
+        <p><em><%= "#{@reviews.size} reviews" %></em></p>
+      </div>
 
-  <h2><%= @place.name %></h2>
-  <p><%= @place.location %></p>
-  <% if @place.price_cents == 0 %>
+    </div>
+    <h2 class="place_name"><%= @place.name %></h2>
+  </div>
+
+
+  <div class="box_address">
+    <div class="box_overlay">
+      <p class="place_address"><%= @place.location %></p>
+    </div>
+    <% if @place.price_cents == 0 %>
     <p> $ </p>
-  <% end %>
-
-
-  <div class="star-rating">
-    <% if @avg_rating == 5 %>
+    <% end %>
+    <div class="star-rating">
+      <% if @avg_rating == 5 %>
       <% 5.times do %>
-        <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
       <% end %>
-    <% else %>
+      <% else %>
       <% @avg_rating.times do %>
-        <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
       <% end %>
       <% (5 - @avg_rating).times do %>
-        <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
       <% end %>
-    <% end %>
-  </div>
-  <p><em><%= "based on #{@reviews.size} reviews" %></em></p>
-
-  <h5>DESCRIPTION</h5>
-  <p><%= @place.description %></p>
-
-
-<%= button_to "Add to your list", place_bookmarks_path(@place), method: "post", class: "btn btn-primary mb-2", params: {list: true} %>
-<%= button_to "Add to your schedule", new_place_bookmark_path(@place), method: "get", class: "btn btn-primary" %>
-  <p>
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-      Add to schedule
-    </button>
-  </p>
-
-  <div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    <div class="container">
-    <div class="form-wrapper">
-
-      <%= render 'bookmarks/form' %>
+      <% end %>
     </div>
+    <p><em><%= "dfvdfvd #{@reviews.size} reviews" %></em></p>
+
+    <h5>DESCRIPTION</h5>
+    <p><%= @place.description %></p>
+
+    <p>
+      <button class="btn btn-primary box_btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Add to schedule
+      </button>
+    </p>
+
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <div class="container">
+          <div class="form-wrapper d-flex justify-content-center align-items-center">
+
+            <%= render 'bookmarks/form' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-  </div>
-</div>
 
 </div>
 
