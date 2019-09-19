@@ -1,23 +1,48 @@
 
-<div class="container">
-  <h1>Categories</h1>
-  <% Category.all.each do |category| %>
-    <%= link_to category.name, places_path(category: category.name) %>
-  <% end %>
-  <h1>Places</h1>
-  <div class="container">
-    <% @places.each do |place| %>
-          <%= link_to place_path(place) do %>
-            <h1><%= place&.name %></h1>
-            <h5><%= place&.location %></h5>
-          <%end%>
-         
-    <%end%>
+
+<div class="box-scroll">s
+  <div class="categories-scroll">
+    <% Category.all.each do |category| %>
+    <div class=<% if current_page?("/places?category=#{category.name}") %>"active-tab"<% end %>>
+      <%= link_to category.name, places_path(category: category.name), class: "inactive-tab" %>
+    </div>
+    <% end %>
+
+  </div>
+</div>
+
+<div class="box_pages" id="box_index">
+  <div class="greeting">
+    <h2>Welcome to <%= current_user.location.split(',').first %>, <%= current_user.name %></h2>
+
+  </div>
+  <div class="box_pages_frame">
+
+    <div class="container">
+
+      <div class="mt-5">
+        <%= link_to map_path do %>
+        <i class="fa fa-map-marked-alt text-secondary"></i>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="box-scroll-places">
+      <div class="categories-scroll">
+        <% @places.each do |place| %>
+        <%= link_to place_path(place) do %>
+        <div class="place-card" >
+
+          <h3><%= place.name %></h3>
+          <p><%= place.location %></p>
+          <img src=<%= place.photo %> >
+
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
-<div class="mt-5">
-  <%= link_to map_path do %>
-    <i class="fa fa-map-marked-alt text-secondary"></i>
-  <% end %>
-</div>
+
 </div>

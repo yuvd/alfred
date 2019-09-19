@@ -1,0 +1,76 @@
+.box-scroll {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+}
+
+.box-scroll-places {
+  width: 100%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 170px;
+  // justify-content: center;
+}
+
+.greeting {
+  color: white;
+}
+
+#box_index {
+  height: 80vh;
+
+}
+
+.box_pages_frame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.categories-scroll {
+  display: flex;
+  height: 90%;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+
+    a:hover {
+      text-decoration: none;
+    }
+}
+
+.inactive-tab {
+  color: white;
+  text-transform:uppercase;
+  margin: 0 10px;
+}
+
+.active-tab {
+  border-bottom: 2px solid white;
+
+}
+
+.place-card {
+    width: 325px;
+    text-align: center;
+    color: white;
+    background-color: rgba(213, 248, 247, 0.6);
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgba(213, 248, 247, 0.6);
+    margin: 0 16px 0 0;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    h3 {
+      font-size: 20px;
+    }
+}
