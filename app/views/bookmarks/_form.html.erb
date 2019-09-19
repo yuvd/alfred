@@ -1,3 +1,3 @@
 <%= simple_form_for [@place, @bookmark] do |f| %>
-<%= f.input :time, as: :string, label: false, placeholder: "pick a date and time", required: true, input_html: {class: "datepicker"} %>  <%= f.submit "Confirm", class: "btn btn-primary box_btn" %>
+<%= f.input :time, as: :string, label: false, placeholder: "choose a date", required: true, input_html: {class: "datepicker"} %>  <%= f.submit "Save", class: "btn box_btn" %>
 <% end %>
