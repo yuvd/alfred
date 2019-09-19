@@ -1,21 +1,15 @@
 
 <div class="container">
-  <h1>Places#index</h1>
-  <p>Find me in app/views/places/index.html.erb</p>
-
-
-
-
-
-  <% @categories.each do |category| %>
+  <h1>Categories</h1>
+  <% Category.all.each do |category| %>
     <%= link_to category.name, places_path(category: category.name) %>
   <% end %>
-
+  <h1>Places</h1>
   <div class="container">
     <% @places.each do |place| %>
       <%= link_to place_path(place) do %>
-        <%= place.name %>
-        <%= place.location %>
+        <h1><%= place.name %></h1>
+        <h5><%= place.location %></h5>
       <% end %>
     <% end %>
   </div>

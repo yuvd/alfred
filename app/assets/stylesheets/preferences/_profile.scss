@@ -1,29 +1,33 @@
 .image-profile-1 {
-  height: 100px;
+  height: 80px;
   margin-bottom: 50px;
+  margin-left: 20px;
   opacity: 0.6;
 
 }
 
 .image-profile-2 {
-  height: 100px;
+  height: 70px;
   margin-bottom: 50px;
-  margin-left: 50px;
+  margin-top: 7px;
+  margin-left: 80px;
   opacity: 0.2;
 
 }
 
 .image-profile-3 {
-  height: 100px;
+  height: 80px;
   margin-bottom: 50px;
+  margin-left: 20px;
   opacity: 0.2;
 
 }
 
 .image-profile-4 {
-  height: 100px;
+  height: 70px;
   margin-bottom: 50px;
-  margin-left: 50px;
+  margin-top: 7px;
+  margin-left: 80px;
   opacity: 0.6;
 
 }
@@ -35,4 +39,9 @@
 
 .box_index {
   border-bottom: 1px solid, black;
+}
+
+.avatar img {
+  width: 56px;
+  border-radius: 50%;
 }

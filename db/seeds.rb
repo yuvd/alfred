@@ -28,9 +28,8 @@ place10 = Place.create!(name: 'Holmes Place', category: Category.last, location:
 place11 = Place.create!(name: 'Yoga Beseder', category: Category.first, location: 'Bograshov 142, Tel Aviv')
 
 
-
 preference1 = Preference.create!(user: user, category: Category.first)
-preference2 = Preference.create!(user: user, category: Category.last)
-preference3 = Preference.create!(user: user, category: Category.first)
+preference2 = Preference.create!(user: user, category: Category.find(2))
+preference3 = Preference.create!(user: user, category: Category.find(3))
 puts "done"
 
