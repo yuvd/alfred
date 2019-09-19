@@ -25,6 +25,9 @@ place7 = Place.create!(name: 'Olim in Tech', category: Category.last, location: 
 place8 = Place.create!(name: 'Type O Negative', category: Category.last, location: 'HaYarkon 14, Tel Aviv')
 place9 = Place.create!(name: 'Dead Can Dance', category: Category.last, location: 'Eilat 14, Tel Aviv')
 place10 = Place.create!(name: 'Holmes Place', category: Category.last, location: 'King George 14, Tel Aviv')
+place11 = Place.create!(name: 'Yoga Beseder', category: Category.first, location: 'Bograshov 142, Tel Aviv')
+
+
 
 preference1 = Preference.create!(user: user, category: Category.first)
 preference2 = Preference.create!(user: user, category: Category.last)

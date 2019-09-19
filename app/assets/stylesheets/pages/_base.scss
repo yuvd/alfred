@@ -1,0 +1,27 @@
+body {
+  background: linear-gradient(180deg, #0C1821 34%, rgba(6, 67, 78, 0.69) 88.61%), linear-gradient(173.27deg, #192027 35.17%, rgba(255, 255, 255, 0) 89.65%);
+  height: 100vh;
+}
+
+.text-white {
+  font-family: $logo-font;
+}
+
+input::placeholder {
+  color: white !important;
+}
+
+.form-control {
+  color: white;
+  background: transparent !important;
+}
+
+.btn {
+  color: white !important;
+}
+
+.btn-primary {
+  background-color: rgb(22, 127, 251) !important;
+  color: white !important;
+  border: 1px solid rgb(22, 127, 251);
+}

@@ -1,8 +1,8 @@
 class Place < ApplicationRecord
   belongs_to :category
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
-  has_many :bookmarks
+  has_many :bookmarks, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :category, presence: true

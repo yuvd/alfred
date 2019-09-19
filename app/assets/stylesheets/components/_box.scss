@@ -1,0 +1,87 @@
+.box {
+    margin: 17px;
+    padding: 16px;
+    background: rgba(213, 248, 247, 0.6);
+    box-shadow: 2px 2px 4px rgba(213, 248, 247, 0.6);
+    border-radius: 8px;
+    height: 85vh;
+    color: white;
+}
+
+.box_overlay p {
+    background: transparent;
+    position: relative;
+    bottom: 14px;
+    // left: -630px;
+    // padding: 0 12px;
+    // width: 400px;
+
+  }
+.box_address {
+  border-top: 1px solid white;
+  display: block;
+  white-space: nowrap;
+
+}
+
+.fa-star {
+  color: rgb(243, 226, 11);
+  font-size: 12px;
+}
+
+.form-group {
+    cursor: pointer;
+    border-bottom: solid;
+    border-bottom-color: white;
+    border-bottom-width: 2px;
+    background: transparent !important;
+}
+
+input {
+  background: transparent !important;
+  color: white;
+}
+
+.card {
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+
+#rating {
+  width: 36%;
+}
+
+#row_rating {
+  justify-content: center;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.box_btn {
+  width: 100%;
+}
+
+.place_address {
+  text-align: center;
+}
+
+.place_name {
+  text-align: left;
+  padding-left: 16px;
+}
+
+.place_title {
+  display: flex;
+  justify-content: space-around;
+}
+
+.place_title h2 {
+  // border-left: 1px solid white;
+}
+
+.review {
+  display: flex;
+}
