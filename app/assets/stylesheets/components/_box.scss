@@ -18,7 +18,7 @@
 
   }
 .box_address {
-  border-top: 1px solid white;
+  // border-top: 1px solid white;
   display: block;
   white-space: nowrap;
 
@@ -61,7 +61,10 @@ input {
 }
 
 .box_btn {
-  width: 100%;
+  width: 80%;
+  background-color: white;
+  opacity: 0.7;
+
 }
 
 .place_address {
@@ -85,3 +88,20 @@ input {
 .review {
   display: flex;
 }
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #5a7d85;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.line {
+  border-bottom: 1px solid white;
+}
+
+
+
