@@ -2,7 +2,7 @@
 <div class="container">
 
 <%= simple_form_for(@user) do |f| %>
-<div class="box_page city"><%= f.input :location, input_html: { id: "address", onclick: "this.select();"}, label: false, placeholder: "Enter your location" %></div>
+<div class=" city"><%= f.input :location, input_html: { id: "address", onclick: "this.select();"}, label: false, placeholder: "Enter your location" %></div>
 <%= hidden_field_tag :from, "landing" %>
 
 <%# f.submit "Save", class: "button"  %>
