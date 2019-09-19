@@ -2,7 +2,7 @@
 
 <div class="box-scroll">s
   <div class="categories-scroll">
-    <% Category.all.each do |category| %>
+    <% @categories.each do |category| %>
     <div class=<% if current_page?("/places?category=#{category.name}") %>"active-tab"<% end %>>
       <%= link_to category.name, places_path(category: category.name), class: "inactive-tab" %>
     </div>
