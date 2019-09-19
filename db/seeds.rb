@@ -29,5 +29,6 @@ user = User.create!(email: 'robert@gmail.com', password: '123456')
 preference1 = Preference.create!(user: user, category: Category.first)
 preference2 = Preference.create!(user: user, category: Category.find(2))
 preference3 = Preference.create!(user: user, category: Category.find(3))
+
 puts "done"
 
