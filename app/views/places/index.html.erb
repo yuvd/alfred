@@ -1,49 +1,68 @@
 
 
-<div class="box-scroll">s
-  <div class="categories-scroll">
-    <% @categories.each do |category| %>
-    <div class=<% if current_page?("/places?category=#{category.name}") %>"active-tab"<% end %>>
-      <%= link_to category.name, places_path(category: category.name), class: "inactive-tab" %>
-    </div>
-    <% end %>
-
-  </div>
-</div>
-
-<div class="box_pages" id="box_index">
-  <div class="greeting">
-    <h2>Welcome to <%= current_user.location.split(',').first %>, <%= current_user.name %>!</h2>
-    <h4>Here are your <span><%= params[:category] %> </span>places:</h4>
-
-  </div>
-  <div class="box_pages_frame">
-
-    <div class="container">
-
-      <div class="mt-5">
-        <% link_to map_path do %>
-        <i class="fa fa-map-marked-alt text-secondary"></i>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="box-scroll-places">
+<div class=" banner">
+    <div class="box-scroll">
       <div class="categories-scroll">
-        <% @places.each do |place| %>
-        <%= link_to place_path(place) do %>
-        <div class="place-card" >
-
-          <h3><%= place.name %></h3>
-          <p><%= place.location %></p>
-          <!-- <img src=<%= place.photo %> > -->
-
+        <% @categories.each do |category| %>
+        <div class=<% if current_page?("/places?category=#{category.name}") %>"active-tab"<% end %>>
+          <%= link_to category.name, places_path(category: category.name), class: "inactive-tab" %>
         </div>
         <% end %>
-        <% end %>
+
+      </div>
+</div>
+
+  <div class="slider">
+    <div id="slider">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5))" >
+          <header class="slide-overlay">
+            <div class="">
+              <div class="text">
+                <p id="place-name">Yoga Tel Aviv</p>
+                <div class="d-flex justify-content-start align-items-center ">
+                  <p class="mr-2 size"><i class="fa fa-map-pin"></i></p>
+                  <p id="location">Ben Yehuda, Tel Aviv</p>
+
+                </div>
+
+                  <div>
+
+
+                  </div>
+
+
+              </div>
+
+              <div class="image-container">
+                <img src="<%= image_path 'traffic.jpg' %>" alt="pic" class="img">
+              </div>
+              </div>
+              <div class="line">
+              </div>
+              <div class="square-line">
+              </div>
+
+
+
+
+          </header>
+          <main>
+
+             <div class="square-line-body">
+            </div>
+
+              <div class="text-body" id="description">
+                <p>Description</p>
+                <p id="description2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni dignissimos doloremque quod commodi accusamus, totam doloribus veniam, minus consectetur placeat assumenda.</p>
+              </div>
+
+              <div class="square-line-schedule">
+                 <img src="<%= image_path 'schedule.png' %>" alt="pic" class="clock">
+              </div>
+
+          </main>
       </div>
     </div>
   </div>
 
 
-</div>

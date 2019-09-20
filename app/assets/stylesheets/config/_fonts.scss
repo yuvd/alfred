@@ -17,3 +17,9 @@ $headers-font: "Titillium Web", "regular 400";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+   font-family: 'Prestage Regular';
+   src: font-url('PrestageRegular.ttf') format('truetype');
+}
+
