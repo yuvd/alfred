@@ -1,73 +1,88 @@
 
-<div class="container profile_index" id="vh">
 
-  <div class="d-flex justify-content-start">
-
-      <div class="avatar">
-        <% if current_user.photo.blank? %>
-          <%= image_tag "Placeholder-Avatar.jpg" %>
-          <% else %>
-          <%= cl_image_tag "current_user.photo" %>
-        <% end %>
-      </div>
-
-      <div>
-        <h1 class="ml-3">Your Profile</h1>
-      </div>
+<div>
+  <p id="intro-profile"> Alfred can help set your profile</p>
+  <div class="line-first">
     </div>
-    <div class="card">
-    <div class="ml-3">
-      <div class="d-flex justify-content-start mt-5">
-        <p>  ----  INFOS </p>
-        <%# link_to edit_user_path (current_user) do %>
-       <p class="ml-2"> <i class="fa fa-pencil-alt"></i></p>
-        <%# end %>
-      </div>
-
-    <div class="d-flex justify-content-start mt-1">
-      <p class="mr-3"><i class="fa fa-signature"></i></p>
-      <p><%= current_user.name %></p>
+     <div class="line-second">
     </div>
-
-    <div class="d-flex justify-content-start mt-1">
-      <p class="mr-3"><i class="fa fa-signature"></i></p>
-      <p><%= current_user.nickname %></p>
-    </div>
-      <div class="d-flex justify-content-start mt-1">
-        <p class="mr-3"><i class="fa fa-city"></i></p>
-        <p><%= current_user.location %></p>
-       </div>
-
-<div class="d-flex justify-content-start mt-1">
-        <p class="mr-3"><i class="fa fa-unlock-alt"></i></p>
-      <p>change password </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="ml-3">
-      <div class="d-flex justify-content-start mt-5">
-        <p> ---- PREFERENCES </p>
-
-        <%= link_to new_user_preference_path(current_user) do %>
-        <p class="ml-2"><i class="fa fa-pencil-alt"></i></p>
-        <% end %>
-      </div>
-
-
-      <div class="row ">
-        <div class="col-xs-12 ">
-          <% @current_user.preferences.each do | preference | %>
-          <div class="row ml-3">
-            <div class="col-xs-12 view">
-              <%=  preference.category.name %>
-            </div>
-          </div>
-          <% end %>
-        </div>
-      </div>
-        </div>
-  </div>
 </div>
 
+
+<div class="slider">
+    <div id="slider">
+      <div class="card-category-profile" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5))" >
+          <header class="slide-overlay">
+            <div class="">
+              <div class="profile">
+                <div class="d-flex justify-content-start align-items-center ">
+                  <%# link_to edit_user_path (current_user) do %>
+                <p class="mr-2 pencil"> <i class="fa fa-pencil-alt"></i></p>
+                <%# end %>
+                <p id="place-name">Profile</p>
+
+                </div>
+
+                 <div class="d-flex justify-content-start align-items-center ">
+                  <p class="mr-2 size-2"><i class="fa fa-signature"></i></p>
+                  <p id="location-2"><%= current_user.name %> (<%= current_user.nickname %>)</p>
+                </div>
+
+                <div class="d-flex justify-content-start align-items-center ">
+                  <p class="mr-2 size-2"><i class="fa fa-map-pin"></i></p>
+                  <p id="location-2">Tel Aviv</p>
+                </div>
+
+                <div class="d-flex justify-content-start align-items-center ">
+                  <p class="mr-2 size-2"><i class="fa fa-unlock-alt"></i></p>
+                  <p id="location-2">Change Password</p>
+                </div>
+
+              </div>
+
+              <div class="image-container">
+                <img src="<%= image_path 'profile.png' %>" alt="pic" class="img-profile">
+                </div>
+                </div>
+                <div class="line-profile">
+                </div>
+                <div class="square-line-profile">
+              </div>
+
+
+          </header>
+          <main>
+
+             <div class="square-line-body-profile">
+            </div>
+
+              <div class="text-body-profile" id="description">
+                <div class="d-flex justify-content-end align-items-center">
+                  <%= link_to new_user_preference_path(current_user) do %>
+                  <p class="mr-2 pencil"> <i class="fa fa-pencil-alt"></i></p>
+                  <% end %>
+
+                  <p id="place-name">Preferences</p>
+                </div>
+
+
+                <div class="row preferences" id="description2-profile">
+
+                    <div class="category-choices ">
+                    <% @current_user.preferences.each do | preference | %>
+                      <div class="row ml-3">
+                        <div class="col-xs-6 view">
+                          <%=  preference.category.name %>
+                        </div>
+                      </div>
+                    <% end %>
+
+              </div>
+
+
+
+          </main>
+      </div>
+    </div>
+  </div>
+  </div>

@@ -1,19 +1,51 @@
 
-<div class="container">
+<div class="black">
+  <div class="squares">
+    <div class="box-preference-progress-1">
 
-<div class="welcome-message">
-  <h2 class="ml-3">Welcome, I am Alfred.</h2>
-  <h2 class="ml-3">Only 2 steps to go.</h2>
+    </div>
+    <div class="box-preference-progress-2">
+  </div>
 </div>
 
-  <div class="d-flex justify-content-start icons_profile">
-  <a ><%= image_tag 'Infos.png', :class => "image-profile-1" %></a>
-  <a ><%= image_tag 'Hobbies2.png', :class => "image-profile-2" %></a>
-  </div>
+  <div class="slider">
+    <div id="slider">
+      <div class="card-category-preferences" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5))" >
+          <header class="slide-overlay">
+            <div class="">
+              <div class="text-preferences">
+                <p id="place-name">Welcome, my friend.</p>
+                  <p id="alfred">Your Travel Butler, Alfred.</p>
+
+              </div>
+              <div class="image-container">
+                <img src="<%= image_path 'Alfred.png' %>" alt="pic" class="img-preferences">
+              </div>
+              </div>
+              <div class="line-preferences">
+              </div>
+              <div class="square-line-preferences">
+              </div>
+
+          </header>
+          <main>
+
+             <div class="square-line-body-preferences">
+            </div>
+
+              <div class="text-body-preferences" id="place-name-preferences">
+                <p>Information</p>
+
+
 
   <div class="container form-container mb-4">
         <%= render 'sign_up_form'%>
   </div>
 
-</div>
 
+
+          </main>
+      </div>
+    </div>
+  </div>
+</div>
