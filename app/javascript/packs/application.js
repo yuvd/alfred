@@ -25,6 +25,9 @@ $('.card-category').click(function(){
   $(this).toggleClass('expanded');
 });
 
+$('.card-category-profile').click(function(){
+  $(this).toggleClass('expanded-profile');
+});
 
   // const checks = document.querySelectorAll('.form-check');
 

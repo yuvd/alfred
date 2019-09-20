@@ -1,38 +1,8 @@
 
-.category-choices {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
-  margin-left: 27px;
-
-}
-.choice:checked + label {
-    background: #50808E;
-      color: white;
-      opacity: 1;
-
-}
 
 
-.preferences .preference-label {
-    background: rgba (0,0,0,0);
-    border: 1px solid grey;
-    width: 140px;
-      padding: 20px;
-      border-radius: 5px;
-      opacity: 1;
-      flex: 0 0 30%;
-      text-align: center;
-      &:hover {
-        opacity: 1;
-        cursor: pointer;
-      }
-      &.active {
-      background: #50808E;
-      color: white;
-      opacity: 1;
-      }
-}
+
+
 
 .button-profile {
 
