@@ -21,6 +21,11 @@ $(document).ready(function(){
     $(this).toggleClass("active");
   });
 
+$('.card-category').click(function(){
+  $(this).toggleClass('expanded');
+});
+
+
   // const checks = document.querySelectorAll('.form-check');
 
   // function toggleActive(event){

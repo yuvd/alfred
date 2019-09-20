@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  
+
   def index
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
     if params[:category]
@@ -25,7 +25,7 @@ class PlacesController < ApplicationController
     else
       @places = []
       @categories.each do |category|
-        unless Place.where(category: category, city: current_user.location).empty? 
+        unless Place.where(category: category, city: current_user.location).empty?
           @places << Place.where(category: category, city: current_user.location).to_a
         else
           populate_places_with_businesses(category.name)
@@ -35,7 +35,7 @@ class PlacesController < ApplicationController
       @places.flatten!
     end
   end
-    
+
     def show
       #@bookmark = Bookmark.new
       @categories = Category.includes(:preferences).where(preferences: { user: current_user })
@@ -46,12 +46,12 @@ class PlacesController < ApplicationController
       #                   else
       #                     @place.reviews.average(:rating).floor
       #                   end
-      
+
       @avg_rating = @reviews.blank? ? 0 : @place.reviews.average(:rating).floor
       @bookmark = Bookmark.new
     end
-    
-    
+
+
     def map
       @places = Place.geocoded
       @markers = @places.map do |place|
@@ -61,9 +61,9 @@ class PlacesController < ApplicationController
         }
       end
     end
-    
+
     def populate_places_with_businesses(category)
-      businesses = Businesses.get_businesses(category, current_user.location) 
+      businesses = Businesses.get_businesses(category, current_user.location)
       businesses.each do |business|
         if Place.find_by(name: business["name"]).nil?
           unless business["location"]["address1"].nil?
