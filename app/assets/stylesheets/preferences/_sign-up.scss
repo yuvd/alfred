@@ -1,9 +1,4 @@
 
-
-
-
-
-
 .button-profile {
 
   border: 1px solid grey;
@@ -56,29 +51,28 @@ input {
   border-color: transparent;
 }
 
-.sign-up-button {
-  border: 1px solid grey;
-  width: 150px;
-  height: 50px;
-  padding-top: 5px;
-  padding-left: 30px;
-  border-radius: 5px;
 
-  color: black;
-  font-weight: bold;
-  font-size: 20px;
-  text-shadow: 1px 1px #ff0000;
-  box-shadow: 2px 2px black;
-}
 
 .form-container a {
   color: white !important;
-  margin-left: 260px
+  margin-left: 200px;
+  font-size: 18px;
 
 }
 
 .holder input::placeholder {
   font-size: 20px !important;
-  opacity: 0.4;
+  opacity: 0.3;
   padding-bottom: 3px !important;
+
+}
+
+.sign-up-button {
+  color: #c8855d !important;
+border: none !important;
+font-size: 34px;
+letter-spacing: 2px;
+font-family: 'Prestage Regular' !important;
+text-align: center;
+
 }
