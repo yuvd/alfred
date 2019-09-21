@@ -1,7 +1,7 @@
 
 
 body {
-  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.0)), url('test.png');
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.9)), url('test-background.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -53,7 +53,7 @@ border-right: 4px solid #b3b50e;
     border-bottom: 4px solid #a9ac16;
     width: 161px;
     position: relative;
-    top: -138px;
+    top: -152px;
     right: -209px;
     height: 161px;
     text-align: right;
@@ -73,7 +73,7 @@ border-left: 4px solid #b3b50e;
 
 .text-body {
    position: relative;
-    top: -307px;
+    top: -323px;
     right: 43px;
     font-family: 'Prestage Regular';
     color: white !important;
@@ -175,19 +175,24 @@ header {
     text-align: right;
 }
 
-#schedule {
-  letter-spacing: 2px;
-  font-size: 19px;
-
+.line-schedule {
+    border-bottom: 4px solid #a9ac16;
+    width: 100px;
+    position: relative;
+    /* top: 2px; */
+    bottom: 337px;
+    right: 0;
+    height: 63px;
+    text-align: right;
 }
 
-.clock {
-  height: 30px;
-  width: auto;
+#footer {
+  font-family: 'Prestage Regular' !important;
+    color: white !important;
+    font-size: 24px !important;
+    margin-top: 17px;
+    text-align: center;
 }
 
-.square-line-schedule {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 5px;
-}
+
+
