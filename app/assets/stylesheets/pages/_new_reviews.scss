@@ -1,0 +1,112 @@
+form#new_review {
+        position: relative;
+    top: 70px;
+    left: 14px;
+}
+
+
+p#review-title {
+    position: relative;
+    top: -153px;
+    right: -28px;
+}
+
+.card-category-review {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    padding: 20px;
+    height: 252px;
+    color: white;
+    font-size: 24px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    border-radius: 30px 30px 0px 0px;
+    transition: height .4s linear, line-height .2s linear, z-index .2s linear;
+    overflow: hidden;
+}
+
+
+.expanded-review {
+    height: 650px;
+    z-index: 9999;
+}
+
+.img-review {
+height: 265px;
+    width: auto;
+    border-radius: 0px 30px 0px 0px;
+    position: relative;
+    top: -20px;
+    right: -160px;
+
+    clip-path: polygon(111% 0%, 0% 0%, 120% 101%);
+}
+
+
+.line-new-review {
+       border-bottom: 4px solid #bd4a53;
+    opacity: 0.8;
+    width: 186px;
+    transform: rotate(44deg);
+    position: relative;
+    top: -305px;
+    left: 102px;
+
+}
+
+.square-line-reviews {
+        width: 198px;
+    position: relative;
+    top: -397px;
+    right: 50px;
+    height: 101px;
+    border-bottom: 4px solid #bd4a53;
+    border-left: 4px solid #bd4a53;
+}
+
+
+.square-line-reviews2 {
+   width: 198px;
+    position: relative;
+    top: -179px;
+    right: -111px;
+    height: 167px;
+    border-bottom: 4px solid #bd4a53;
+    border-right: 4px solid #bd4a53;
+}
+
+.button-reviews {
+    color: #bd4a53 !important;
+    border: none !important;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Prestage Regular' !important;
+  }
+
+
+   .review-content .form-group {
+
+    border-bottom: none !important;
+}
+
+.alfred-review {
+        font-size: 18px;
+    letter-spacing: 1px;
+    color: #bd4a53;
+    font-family: "Titillium Web", "light 300" !important;
+    position: relative;
+    bottom: -1px;
+    left: 16px;
+}
+
+.new-review .form-group {
+  cursor: pointer;
+    border-bottom: none !important;
+    border-bottom-color: white;
+    border-bottom-width: 2px;
+    background: transparent !important;
+
+}

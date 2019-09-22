@@ -29,6 +29,14 @@ $('.card-category-profile').click(function(){
   $(this).toggleClass('expanded-profile');
 });
 
+$('.card-category-mark').click(function(){
+  $(this).toggleClass('expanded-mark');
+});
+
+$('.card-category-review').click(function(){
+  $(this).toggleClass('expanded-review');
+});
+
   // const checks = document.querySelectorAll('.form-check');
 
   // function toggleActive(event){
