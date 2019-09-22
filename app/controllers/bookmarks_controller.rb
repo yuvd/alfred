@@ -10,13 +10,15 @@ class BookmarksController < ApplicationController
   end
 
   def show
+
   end
 
   def new
+    @place = Place.find(params[:place_id])
     @bookmark = Bookmark.new
-    if params['list'] == 'true'
-      redirect_to place_bookmarks_path(params[:place_id]), method: :post
-    end
+    # if params['list'] == 'true'
+    #   redirect_to place_bookmarks_path(params[:place_id]), method: :post
+    # end
   end
 
   def create

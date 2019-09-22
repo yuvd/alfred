@@ -34,6 +34,9 @@ class PlacesController < ApplicationController
       end
       @places.flatten!
     end
+
+    @bookmark = Bookmark.new
+
   end
 
     def show
