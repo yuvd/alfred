@@ -10,7 +10,7 @@
 </div>
 
   <div class="slider">
-    <div id="slider">
+    <div id="slider-preferences-new">
       <div class="card-category-preferences" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5))" >
           <header class="slide-overlay">
             <div class="">
@@ -18,13 +18,8 @@
                 <p id="place-name">Tell me what you like.</p>
                   <p id="alfred">Your, Alfred.</p>
                   <div>
-
-
                   </div>
-
-
               </div>
-
               <div class="image-container">
                 <img src="<%= image_path 'Alfred.png' %>" alt="pic" class="img-preferences">
               </div>
@@ -33,50 +28,46 @@
               </div>
               <div class="square-line-preferences">
               </div>
-
-
-
-
-          </header>
-          <main>
+            </header>
+            <main>
 
              <div class="square-line-body-preferences">
-            </div>
+             </div>
 
-              <div class="text-body-preferences" id="place-name-preferences">
-                <p>Preferences</p>
+             <div class="text-body-preferences" id="place-name-preferences">
+              <p>Preferences</p>
 
-          <div class="row preferences">
-    <%= simple_form_for([@user, @preference]) do |f| %>
+              <div class="row preferences">
+                <%= simple_form_for([@user, @preference]) do |f| %>
    <!--  <div class="col-xs-5">
 
       <%#f.association :category, as: :check_boxes %>
     </div> -->
 
-    <div class="form-group mt-4 mr-2" id="last">
-    <div class="category-choices">
-    <% Category.all.each do |category| %>
+            <div class="form-group mt-4 mr-2" id="last">
+              <div class="category-choices">
+                <% Category.all.each do |category| %>
 
 
-      <input type="checkbox" class="d-none choice" value="<%= category.id %>" name="preferences[category_ids][]" id="preferences_category_ids_<%= category.id %>">
-      <label for="preferences_category_ids_<%= category.id %>" class="preference-label">
-        <%= category.name %>
-      </label>
+                <input type="checkbox" class="d-none choice" value="<%= category.id %>" name="preferences[category_ids][]" id="preferences_category_ids_<%= category.id %>">
+                <label for="preferences_category_ids_<%= category.id %>" class="preference-label">
+                  <%= category.name %>
+                </label>
 
-    <% end %>
-   </div>
-</div>
+                <% end %>
+              </div>
+            </div>
 
-  <div class="square-line-button">
-  </div>
-  <div class="save-preferences">
-    <%= f.submit "Save", class: "button-preferences"  %>
-  </div>
+            <div class="square-line-button">
+            </div>
+            <div class="save-preferences">
+              <%= f.submit "Save", class: "button-preferences"  %>
+            </div>
 
 
 
-  </div>
-<% end %>
+          </div>
+          <% end %>
 
 
           </main>

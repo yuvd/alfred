@@ -1,11 +1,35 @@
 
-<div class="text" id="white" >
-<p id="place-name">Create a booking</p>
 
-<p id="place-name">add to your list</p>
 
-<p id="place-name">book a time</p>
+<div id="slider" class="xyz">
+      <div class="card-category-mark" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5))" >
+          <header class="slide-overlay">
+            <div class="">
+              <p id="place-name" class="position"> <%= link_to "Add to bookmarks", place_bookmarks_path, method: :post %></p>
 
-<%= render 'form', bookmark: @bookmark%>
+              <div class="text-preferences">
+                <p id="place-name" class="schedule-this-place">Schedule this place.</p>
+                <div id="schedule" id="white" >
 
+
+                <div class="book-a-time">
+                <%= render 'form', bookmark: @bookmark%>
+                </div>
+              </div>
+                  <div>
+                  </div>
+              </div>
+              <div class="image-container">
+                <img src="<%= image_path 'schedule.jpeg' %>" alt="pic" class="img-schedule-bookmark">
+              </div>
+              </div>
+              <div class="line-new-bookmarks">
+              </div>
+              <div class="square-line-bookmarks">
+              </div>
+            </header>
+  </div>
 </div>
+
+
+
