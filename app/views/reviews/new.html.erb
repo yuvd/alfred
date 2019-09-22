@@ -1,14 +1,30 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
 
-<div class="container">
-  <div class="row">
+<div>
+  <p class="alfred-review"> How did you like the place? - Alfred</p>
+</div>
+
+
+
+<div class="container card-category-review expanded-review">
+  <div class="image-container">
+    <img src="<%= image_path 'Reviews.png' %>" alt="pic" class="img-review">
+    </div>
+    <p id="review-title">Write a review</p>
+
+    <div class="line-new-review">
+  </div>
+  <div class="row ml-5">
     <div class="col-xs-4">
       <%= simple_form_for([@place, @review]) do |f| %>
-        <%= f.input :content %>
-        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-        <%= f.button :submit, "Submit", class: "btn btn-primary"  %>
+      <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
+        <%= f.input :content, placeholder: "Write a review" %>
+        <%= f.button :submit, "SAVE", class: "button-reviews"  %>
       <% end %>
     </div>
+
+     <div class="square-line-reviews">
+              </div>
+              <div class="square-line-reviews2">
+              </div>
   </div>
 </div>

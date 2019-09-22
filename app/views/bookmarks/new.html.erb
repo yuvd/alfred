@@ -5,15 +5,24 @@
       <div class="card-category-mark" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5))" >
           <header class="slide-overlay">
             <div class="">
-              <p id="place-name" class="position"> <%= link_to "Add to bookmarks", place_bookmarks_path, method: :post %></p>
+
+              <div class="d-flex justify-content-start">
+
+
+                <%= link_to place_bookmarks_path, method: :post do %>
+                  <p> <i class="fa fa-plus plus1"></i></p>
+                  <% end %>
+                <p id="place-name" class="position"> <%= link_to "bookmarks", place_bookmarks_path, method: :post %></p>
+              </div>
 
               <div class="text-preferences">
                 <p id="place-name" class="schedule-this-place">Schedule this place.</p>
                 <div id="schedule" id="white" >
 
 
-                <div class="book-a-time">
-                <%= render 'form', bookmark: @bookmark%>
+                <div class="book-a-time d-flex justify-content-start">
+                 <p> <i class="fa fa-plus plus2"></i></p>
+               <p><%= render 'form', bookmark: @bookmark%></p>
                 </div>
               </div>
                   <div>
@@ -27,6 +36,9 @@
               </div>
               <div class="square-line-bookmarks">
               </div>
+              <div class="square-line-bookmarks2">
+              </div>
+              <p id="good-choice">Good choice, <%= current_user.nickname%>. - Alfred</p>
             </header>
   </div>
 </div>
