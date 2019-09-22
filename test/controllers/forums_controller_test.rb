@@ -11,13 +11,8 @@ class ForumsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
-    get forums_edit_url
-    assert_response :success
-  end
-
-  test "should get update" do
-    get forums_update_url
+  test "should get create" do
+    get forums_create_url
     assert_response :success
   end
 

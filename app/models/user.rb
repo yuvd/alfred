@@ -7,5 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   mount_uploader :photo, PhotoUploader
-
+  has_many :forum_users
+  has_many :forums, through: :users
+  has_many :post_votes
 end
