@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:edit, :update, :destroy] do
     resources :post_votes, only: [:create]
-    resources :post_replies, only: [:create, :new]
+    resources :post_replies, only: [:create, :new, :destroy]
   end
   resources :post_votes, only: [:destroy]
   resources :forums, only: [:index, :show] do 

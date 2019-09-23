@@ -11,6 +11,11 @@ class PostRepliesController < ApplicationController
     redirect_to forum_post_path(post.forum, post)
   end
 
+  def destroy
+    @post_reply = PostReply.find(params[:id])
+    @post_reply.destroy
+  end
+
   def post_reply_params
     params.require(:post_reply).permit(:description)
   end

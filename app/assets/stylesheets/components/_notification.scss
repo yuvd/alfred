@@ -21,26 +21,29 @@
   color: #999999;
   font-weight: bold;
 }
-.notification-forum .notification-actions {
-  opacity: 0;
+.notification-forum .notification-forum-actions {
+  opacity: 1;
   display: flex;
   transition: ease .3s;
 }
 
-.notification-forum:hover .notification-actions {
+.notification-forum:hover .notification-forum-actions {
   opacity: 1;
 }
 
-.notification-forum .notification-actions a {
-  color: #999999;
+.notification-forum .notification-forum-actions a {
   margin-left: 16px;
   font-size: 14px;
 }
 
-.notification-forum .notification-forum-actions a:hover {
+.notification-forum .notification-forum-actions a {
   color: #555555;
 }
 
 .notification-forum i {
+  color: black !important;
+}
+
+.notification-forum-actions {
   color: black !important;
 }
