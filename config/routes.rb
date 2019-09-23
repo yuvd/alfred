@@ -7,13 +7,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users, controllers: { registrations: "registrations" }
 
-  get 'places/:id/forum', to: 'forums#show', as: 'place_forum'
-
-
-  resources :forums, only: [:index] do 
-    resources :posts, only: [:new, :create, :edit, :update, :destroy] do
-      resources :post_votes, only: [:create, :destroy]
-    end
+  resources :posts, only: [:edit, :update, :destroy] do
+    resources :post_votes, only: [:create]
+  end
+  resources :post_votes, only: [:destroy]
+  resources :forums, only: [:index, :show] do 
+    resources :posts, only: [:new, :create]
   end
   get 'places/map', to: 'places#map', as: 'map'
   get 'profile', to: 'pages#profile', as: 'profile'

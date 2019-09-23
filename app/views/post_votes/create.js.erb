@@ -1,2 +1,2 @@
-document.querySelector("[data-votes-counter-id='<%= @postvote.post.id %>']").innerHTML = <%=@postvote.post.post_votes.count%> + " votes";
-document.querySelector("[data-votes-counter-id='<%= @postvote.post.id %>']").replaceWith("ass");
+vc = document.getElementById("votes-container");
+vc.innerHTML = "<%= j render 'forums/votes', post: @post%>";

@@ -13,26 +13,18 @@
 
 <div class="container">
 <%@posts.each do |post|%>
-<div class="notification">
+<div class="notification-forum">
   <img src="<%=post.user.photo%>" class="avatar-large" />
   <div class="notification-content">
     <p><small><strong><%=post.user.nickname%></strong> on <%=post.created_at.strftime("%d/%m/%y at %I:%M%p")%></small></p>
     <p><%=post.description%></p>
-    <%if current_user.post_votes.where(post: post).empty?%>
-    <p><%= link_to forum_post_post_votes_path(forum_id: post.forum, post_id: post), method: :post, remote: true do %>
-    <i class="far fa-thumbs-up"></i>
-    <%end%>
-    <%else%>
-      <p><%= link_to forum_post_post_vote_path(forum_id: post.forum, post_id: post), method: :delete, remote: true do %>
-      <i class="far fa-thumbs-down"></i>
-      <%end%>
-    <% end %>
-    </p>
-    <p data-votes-counter-id="<%=post.id%>"><%=post.post_votes.count%> votes</p>
+    <div id="votes-container">
+      <%=render 'votes', post: post%>
+    </div>
     <%if current_user == post.user%>
-      <div class="notification-actions">
+      <div class="notification-forum-actions">
         <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-        <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+        <a href="#">Delete <i class="far fa-trash-alt""></i></a>
       </div>
     <%end%>
   </div>
