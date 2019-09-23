@@ -90,6 +90,35 @@ border-left: 4px solid #c8855d;
     text-align: right;
 }
 
+
+:focus{outline: none;}
+
+.effect-1 {
+  border: 0;
+  padding: 7px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.effect-1 ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3399FF;
+  transition: 0.4s;
+}
+.effect-1:focus ~ .focus-border {
+  width: 100%;
+  transition: 0.4s;
+}
+
+
+
+
+
+
+
 .preferences .preference-label {
     background: rgba (0,0,0,0);
     border-top: 1px solid grey;

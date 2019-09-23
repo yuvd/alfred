@@ -1,10 +1,2 @@
-document.querySelector("[data-votes-counter-id='<%= @postvote.post.id %>']").innerHTML = <%=@postvote.post.post_votes.count%> + " votes";
-document.querySelector("[data-votes-counter-id= '<%= @postvote.post.id %>' ]").previousElementSibling.innerHTML = <p><%= link_to forum_post_post_votes_path(forum_id: post.forum, post_id: post), method: :post, remote: true do %>
-    <i class="far fa-thumbs-up"></i>
-    <%end%>
-    </p>
-
-
-/* this thing works 
-document.querySelector("[data-votes-counter-id= '<%= @postvote.post.id %>' ]").previousElementSibling.innerHTML = "test"
-*/
+vc = document.getElementById("votes-container");
+vc.innerHTML = "<%= j render 'forums/votes', post: @post%>";

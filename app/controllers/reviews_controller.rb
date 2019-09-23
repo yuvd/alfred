@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Reviews.all
+    @place = Place.find(params[:place_id])
   end
 
   def new
