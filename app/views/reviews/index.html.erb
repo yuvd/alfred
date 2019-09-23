@@ -1,63 +1,44 @@
 
-<div class="slider">
-    <div id="slider">
-      <div class="card-category-preferences" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5))" >
-          <header class="slide-overlay">
-            <div class="">
-              <div class="text-preferences">
-                <p id="place-name">Reviews</p>
-                <p id="alfred"><%= @place.name %></p>
 
-              </div>
-              <div class="image-container">
-                <img src="<%= image_path 'Alfred.png' %>" alt="pic" class="img-preferences">
-              </div>
-            </div>
-            <div class="line-preferences">
-            </div>
-            <div class="square-line-preferences">
-            </div>
-
-          </header>
-          <!-- <main> -->
-
-             <!-- <div class="square-line-body-preferences">
-            </div> -->
-
-          <!-- </main> -->
-      </div>
-    </div>
-</div>
             <div class="reviews_frame">
+              <div class="reviews_placename">
+                <h1>Reviews</h1>
+                <p><%= @place.name %></p>
+
+              </div>
 
             <% @place.reviews.each do |review| %>
-              <div class="notification">
+              <div class="notification_body">
                 <div class="avatar_frame">
                   <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-square" />
                 </div>
                 <div class="notification-content">
                   <div class="notification-top">
-                  <p><%= review.user.name %></p>
+                  <p id="reviewer"><%= review.user.name %></p>
                   <p><small><%= review.created_at.to_date %></small></p>
 
                   </div>
-                  <div class="star-rating ml-3">
+                  <div class="review_content">
+                  <div class="star-rating">
                     <% if review.rating == 5 %>
                       <% 5.times do %>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star star"></i>
                       <% end %>
                     <% else %>
                       <% review.rating.times do %>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star star"></i>
                       <% end %>
                     <% end %>
                     <% (5 - review.rating).times do %>
-                      <i class="far fa-star"></i>
+                      <i class="far fa-star star"></i>
                     <% end %>
 
                   </div>
-                  <p><%= review.content %></p>
+
+                  <p id="review_text"><%= review.content %></p>
+                  </div>
                 </div>
+                <div class="styling_lines_box"></div>
               </div>
             <% end %>
             </div>
