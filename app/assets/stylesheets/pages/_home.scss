@@ -8,7 +8,7 @@
 }
 
 .home-page-layout {
-  background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.0)), url('https://res.cloudinary.com/dodsrfkhr/image/upload/v1568900392/Background-cropped2_op179r.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.0)), url('https://res.cloudinary.com/dodsrfkhr/image/upload/v1568900392/Background-cropped2_op179r.jpg');
   background-repeat: no-repeat;
   background-position: center;
 background-size:cover;
@@ -34,22 +34,20 @@ background-size:cover;
 
 
 .button-registration {
-  border: 1px solid grey;
-  background: #69A297 !important;
-  width: 350px;
-  padding: 20px;
-  border-radius: 5px;
-  opacity: .7;
-  color: black;
-  font-weight: bold;
-  font-size: 20px;
-  text-shadow: 1px 1px #ff0000;
-  margin-top: 350px !important;
-  box-shadow: 2px 2px black;
+border-top: 2px solid grey;
+    border-right: grey;
+    width: 215px;
+    padding: 20px;
+    border-radius: 5px;
+    opacity: 1;
+    flex: 0 0 30%;
+    text-align: center;
+    position: relative;
+    top: 214px;
+    left: 88px;
+    background-color: black;
 
-  a:hover {
-  background-color: yellow;
-}
+
 }
 
 
@@ -78,6 +76,8 @@ background-size:cover;
 }
 .logo_main {
   font-size: 32px;
+  font-family: 'Anurati-Regular';
+  letter-spacing: 2px;
 }
 
 .sublogo {
@@ -127,4 +127,23 @@ background-size:cover;
     30% {width:125px;}
     80% {opacity:1;}
     100% {opacity:1;width:125px;}
+}
+
+.text-homepage {
+  position: relative;
+    left: -2px;
+    padding-left: 27px;
+    margin-top: 59px;
+}
+
+.lower-box {
+  position:relative;
+  top:63px;
+}
+
+#alfred-homepage {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: yellow !important;
+    font-family: "Titillium Web", "light 300" !important;
 }

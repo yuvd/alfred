@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     @review.place = @place
     # raise
     if @review.save
-      redirect_to place_path(@place)
+      redirect_to place_reviews_path(@place)
     else
       flash[:alert] = "Something went wrong."
       render :new
