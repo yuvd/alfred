@@ -13,6 +13,17 @@
 
 }
 
+.img-sign-up {
+height: 265px;
+    width: auto;
+    border-radius: 0px 30px 0px 0px;
+    position: relative;
+    top: -65px;
+    right: -168px;
+    -webkit-clip-path: polygon(111% 0%, 0% 0%, 101% 101%);
+    clip-path: polygon(111% 0%, 0% 0%, 101% 101%);
+}
+
 .col-form-label {
   display: none;
 }
@@ -75,4 +86,32 @@ letter-spacing: 2px;
 font-family: 'Prestage Regular' !important;
 text-align: center;
 
+}
+
+
+.square-line-sign-up {
+  border-left: 4px solid #c8855d;
+    border-bottom: 4px solid #c8855d;
+    width: 144px;
+    position: relative;
+    top: -241px;
+    right: -4px;
+    height: 112px;
+}
+
+.text-sign-up {
+      position: absolute;
+    padding-left: 33px;
+    margin-top: 36px;
+}
+
+.text-body-sign-up {
+    position: relative;
+    top: -355px;
+    right: 50px;
+    font-family: 'Prestage Regular';
+    color: white !important;
+    text-align: justify;
+    padding-left: 80px;
+    padding-bottom: 56px;
 }

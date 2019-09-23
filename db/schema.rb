@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_115207) do
+ActiveRecord::Schema.define(version: 2019_09_22_130021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,10 +31,20 @@ ActiveRecord::Schema.define(version: 2019_09_19_115207) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "forums", force: :cascade do |t|
-    t.string "location"
+  create_table "forum_users", force: :cascade do |t|
+    t.bigint "forum_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["forum_id"], name: "index_forum_users_on_forum_id"
+    t.index ["user_id"], name: "index_forum_users_on_user_id"
+  end
+
+  create_table "forums", force: :cascade do |t|
+    t.bigint "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_forums_on_place_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -53,8 +63,16 @@ ActiveRecord::Schema.define(version: 2019_09_19_115207) do
     t.index ["category_id"], name: "index_places_on_category_id"
   end
 
+  create_table "post_votes", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_votes_on_post_id"
+    t.index ["user_id"], name: "index_post_votes_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
-    t.string "title"
     t.string "description"
     t.bigint "user_id"
     t.bigint "forum_id"
@@ -102,7 +120,12 @@ ActiveRecord::Schema.define(version: 2019_09_19_115207) do
 
   add_foreign_key "bookmarks", "places"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "forum_users", "forums"
+  add_foreign_key "forum_users", "users"
+  add_foreign_key "forums", "places"
   add_foreign_key "places", "categories"
+  add_foreign_key "post_votes", "posts"
+  add_foreign_key "post_votes", "users"
   add_foreign_key "posts", "forums"
   add_foreign_key "posts", "users"
   add_foreign_key "preferences", "categories"
