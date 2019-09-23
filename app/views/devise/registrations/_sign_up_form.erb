@@ -15,21 +15,21 @@
                 required: true,
                 autofocus: true,
                 placeholder: "Nickname",
-                input_html: { autocomplete: "nickname" }%>
+                input_html: { autocomplete: "nickname", class: "effect-1" }%>
    </div>
     <div class=" mb-3 holder">
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 placeholder: "E-mail",
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "email", class: "effect-1" }%>
     </div>
     <div class=" mb-3 holder">
     <%= f.input :location,
                 required: true,
                 autofocus: true,
                 placeholder: "Location",
-                input_html: { autocomplete: "location" }%>
+                input_html: { autocomplete: "location", class: "effect-1" }%>
     </div>
 
     <div class=" mb-3 holder">
@@ -38,14 +38,14 @@
 
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 placeholder: "Password",
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", class: "effect-1" } %>
     </div>
 
     <div class=" mb-3 holder">
     <%= f.input :password_confirmation,
                 required: true,
                 placeholder: "Password_confirmation",
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", class: "effect-1" } %>
            </div>
 
     <span class="mt-5 holder">

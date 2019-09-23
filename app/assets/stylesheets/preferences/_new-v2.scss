@@ -37,16 +37,15 @@
 
 
 .line-preferences {
-   border-bottom: 4px solid #c8855d;
+     border-bottom: 4px solid #c8855d;
     opacity: 0.8;
-    width: 105%;
+    width: 94%;
     transform: rotate(50deg);
     position: relative;
-    top: -239px;
-    left: 88px;
+    top: -219px;
+    left: 104px;
+
 }
-
-
 
 .square-line-preferences {
 border-left: 4px solid #c8855d;
@@ -79,6 +78,10 @@ border-left: 4px solid #c8855d;
   letter-spacing: 2px;
   text-align: right;
 
+}
+
+.text-body-preferences p {
+  margin-right: 21px;
 }
 
 .square-line-body-preferences {
@@ -199,6 +202,7 @@ position: absolute;
     text-align: justify;
     padding-left: 80px;
     padding-bottom: 56px;
+    width: 100vw;
 }
 
 .box-preference-progress-1 {
