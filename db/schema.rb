@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_22_130021) do
+ActiveRecord::Schema.define(version: 2019_09_23_094507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(version: 2019_09_22_130021) do
     t.float "longitude"
     t.string "city"
     t.index ["category_id"], name: "index_places_on_category_id"
+  end
+
+  create_table "post_replies", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "user_id"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_replies_on_post_id"
+    t.index ["user_id"], name: "index_post_replies_on_user_id"
   end
 
   create_table "post_votes", force: :cascade do |t|
@@ -124,6 +134,8 @@ ActiveRecord::Schema.define(version: 2019_09_22_130021) do
   add_foreign_key "forum_users", "users"
   add_foreign_key "forums", "places"
   add_foreign_key "places", "categories"
+  add_foreign_key "post_replies", "posts"
+  add_foreign_key "post_replies", "users"
   add_foreign_key "post_votes", "posts"
   add_foreign_key "post_votes", "users"
   add_foreign_key "posts", "forums"

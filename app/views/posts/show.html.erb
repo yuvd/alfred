@@ -1,0 +1,7 @@
+<p> <%=@post.description%> </p>
+<%= link_to  "back", forum_path(@post.forum) %>
+<h2>replies</h2>
+<%@post.post_replies.each do |reply|%>
+<p><%=reply.description%></p>
+<%end%>
+<%= link_to  "add reply", new_post_post_reply_path(@post) %>
