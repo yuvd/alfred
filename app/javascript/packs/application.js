@@ -21,13 +21,37 @@ $(document).ready(function(){
     $(this).toggleClass("active");
   });
 
-$('.card-category').click(function(){
-  $(this).toggleClass('expanded');
-});
 
-$('.card-category-profile').click(function(){
-  $(this).toggleClass('expanded-profile');
-});
+// $(window).load(function(){
+//     $(".col-3 input").val("");
+
+//     $(".input-effect input").focusout(function(){
+//       if($(this).val() != ""){
+//         $(this).addClass("has-content");
+//       }else{
+//         $(this).removeClass("has-content");
+//       }
+//     })
+//   });
+
+// $('.card-category').click(function(){
+//   $(this).toggleClass('expanded');
+// });
+
+// $('.card-category-profile').click(function(){
+//   $(this).toggleClass('expanded-profile');
+// });
+
+
+
+const toggleInfo = event => {
+  console.log(event)
+  event.currentTarget.classList.toggle('new-expanded');
+}
+
+const cardCat = document.querySelectorAll('.card-category');
+cardCat.forEach(card => card.addEventListener('click', toggleInfo))
+
 
   // const checks = document.querySelectorAll('.form-check');
 
@@ -40,11 +64,12 @@ $('.card-category-profile').click(function(){
 
 
 
+
 const init = function(){
     let items = document.querySelectorAll('section');
     for (let i = 0; i < items.length; i++){
         items[i].style.background = randomColor({luminosity: 'light'});
     }
-    cssScrollSnapPolyfill()
+    // cssScrollSnapPolyfill()
 }
 init();

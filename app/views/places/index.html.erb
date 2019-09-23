@@ -13,62 +13,53 @@
 
 
 
-<div class="frame-slider">
-  <div class="slider">
-
-      <% @places.each do |place| %>
-      <section>
-        <div id="slider">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0))" >
-
-            <header class="slide-overlay">
-              <div class="text">
-                <p id="place-name"><%= place.name %></p>
-                <div class="d-flex justify-content-start align-items-center ">
-                  <p class="mr-2 size"><i class="fa fa-map-pin"></i></p>
-                  <p id="location"><%= place.location %></p>
-                </div>
-              </div>
-
-              <div class="image-container">
-                <img src="<%= image_path 'sailing2.png' %>" alt="pic" class="img">
-              </div>
-              <div class="line">
-              </div>
-              <div class="square-line">
-              </div>
-            </header>
-
-            <main>
-             <div class="square-line-body">
-             </div>
-             <div class="text-body" id="description">
-              <p id="place-name">Reviews</p>
-              <% place.reviews.each do |review| %>
-              <p id="location"><%= review.content %></p>
-              <% end %>
-
-              <p id="description2"></p>
+  <div class="slider2">
+    <% @places.each do |place| %>
+      <div class="card-category slide-cat-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0))" >
+        <header class="slide-overlay">
+          <div class="text">
+            <p id="place-name"><%= place.name %></p>
+            <div class="d-flex justify-content-start align-items-center ">
+              <p class="mr-2 size"><i class="fa fa-map-pin"></i></p>
+              <p id="location"><%= place.location %></p>
             </div>
+          </div>
 
-            <div class="d-flex justify-content-between">
-              <div class="line-schedule">
-                <p id="footer"><%= link_to 'schedule', new_place_bookmark_path(place) %></p>
-              </div>
-              <div class="line-schedule">
-                <p id="footer">forum</p>
-              </div>
-              <div class="line-schedule">
-                <p id="footer">map</p>
-              </div>
+          <div class="image-container">
+            <img src="<%= image_path 'sailing2.png' %>" alt="pic" class="img">
+          </div>
+          <div class="line">
+          </div>
+          <div class="square-line">
+          </div>
+        </header>
+
+        <main>
+         <div class="square-line-body">
+         </div>
+         <div class="text-body" id="description">
+          <p id="place-name">Reviews</p>
+            <% place.reviews.each do |review| %>
+            <p id="location"><%= review.content %></p>
+            <% end %>
+
+            <p id="description2"></p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <div class="line-schedule">
+              <p id="footer"><%= link_to 'schedule', new_place_bookmark_path(place) %></p>
             </div>
-          </main>
-        </div>
+            <div class="line-schedule">
+              <p id="footer">forum</p>
+            </div>
+            <div class="line-schedule">
+              <p id="footer">map</p>
+            </div>
+          </div>
+        </main>
       </div>
-    </section>
-      <% end %>
+    <% end %>
   </div>
-</div>
 
 
 
