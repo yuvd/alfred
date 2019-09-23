@@ -42,6 +42,7 @@ input {
     background: transparent !important;
   }
 
+
 .form-control:focus, input:focus, textarea:focus, select:focus{
   color: white !important;
   border-color: transparent !important;
@@ -76,6 +77,8 @@ input {
   font-size: 20px !important;
   opacity: 0.3;
   padding-bottom: 3px !important;
+  letter-spacing: 2px !important;
+  // font-family: 'Titillium Web' !important;
 
 }
 
@@ -87,6 +90,10 @@ letter-spacing: 2px;
 font-family: 'Prestage Regular' !important;
 text-align: center;
 
+}
+
+.effect-1 {
+  font-family: 'Titillium Web' !important;
 }
 
 

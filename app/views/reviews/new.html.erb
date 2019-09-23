@@ -1,19 +1,21 @@
 
-<div>
-  <p class="alfred-review"> How did you like the place? - Alfred</p>
-</div>
 
 
 
 <div class="container card-category-review">
   <div class="image-container">
-    <img src="<%= image_path 'Reviews.png' %>" alt="pic" class="img-review">
+    <img src="<%= image_path 'typing.jpg' %>" alt="pic" class="img-review">
     </div>
     <p id="review-title">Write a review</p>
 
     <div class="line-new-review">
   </div>
+  <div>
+
+  </div>
   <div class="row ml-5">
+    <div class="rating_box">
+      <p id="click-rate">Click to rate</p>
     <div class="col-xs-4">
       <%= simple_form_for([@place, @review]) do |f| %>
       <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
@@ -22,9 +24,11 @@
       <% end %>
     </div>
 
+    </div>
+
      <div class="square-line-reviews">
               </div>
-              <div class="square-line-reviews2">
-              </div>
+              <!-- <div class="square-line-reviews2">
+              </div> -->
   </div>
 </div>

@@ -45,11 +45,11 @@
 .line-bookmarks {
   border-bottom: 4px solid green;
     opacity: 0.8;
-    width: 355px;
+    width: 338px;
     transform: rotate(50deg);
     position: relative;
-        top: -132px;
-    left: 132px;
+    top: -139px;
+    left: 133px;
 }
 
 ul#myTab {
@@ -108,4 +108,8 @@ ul#myTab {
     top: -84px;
     right: -24px;
     height: 80px;
+  }
+
+  .z-review {
+    z-index: 3;
   }

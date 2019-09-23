@@ -54,7 +54,7 @@
        <div class="schedule-info">
           <p><%= bookmark.place.name%></p>
         <div class="d-flex justify-content-start">
-         <p><%= link_to 'Add Review ', new_place_review_path(bookmark.place) %></p>
+         <p class="z-review"><%= link_to 'Review ', new_place_review_path(bookmark.place) %></p>
           <p class="ml-1"><%= link_to ' | Delete', bookmark_path(bookmark), method: :delete %></p>
         </div>
         </div>
