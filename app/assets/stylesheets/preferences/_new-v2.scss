@@ -1,7 +1,7 @@
 
 .black {
   background-color: black;
-  height: 350vh;
+  height: 300vh;
   width: 100vw;
 }
 
@@ -22,27 +22,30 @@
 .card-category-preferences {
   background-color: rgba(0,0,0,0.7) !important;
   padding: 20px;
-  height: 666px;
   color: white;
   margin-top: 20px;
   font-size: 24px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   bottom: 0;
-  width: 100vw;
+  width: 100%;
   border-radius: 30px 30px 0px 0px;
+  height: 100%;
 
 }
+
+
 
 .line-preferences {
-border-bottom: 4px solid #c8855d;
+   border-bottom: 4px solid #c8855d;
     opacity: 0.8;
-    width: 426px;
+    width: 105%;
     transform: rotate(50deg);
     position: relative;
-    top: -251px;
-    left: 22px;
+    top: -239px;
+    left: 88px;
 }
+
 
 
 .square-line-preferences {
@@ -82,7 +85,7 @@ border-left: 4px solid #c8855d;
     border-right: 4px solid #c8855d;
     border-top: 4px solid #c8855d;
     margin-bottom: 38px;
-    width: 161px;
+    width: 48%;
     position: relative;
     top: -177px;
     right: -188px;
@@ -93,11 +96,11 @@ border-left: 4px solid #c8855d;
 
 :focus{outline: none;}
 
-.effect-1 {
-  border: 0;
-  padding: 7px 0;
-  border-bottom: 1px solid #ccc;
-}
+// .effect-1 {
+//   border: 0;
+//   padding: 7px 0;
+//   border-bottom: 1px solid #ccc;
+// }
 
 .effect-1 ~ .focus-border {
   position: absolute;
@@ -174,7 +177,7 @@ font-family: 'Prestage Regular' !important;
     width: auto;
     border-radius: 0px 30px 0px 0px;
     position: relative;
-    top: -85px;
+    top: -106px;
     right: -148px;
 
     clip-path: polygon(111% 0%, 0% 0%, 101% 101%);
@@ -222,3 +225,23 @@ position: absolute;
 justify-content: start;
 align-items: baseline;
 }
+
+label.file.optional {
+        position: relative;
+    top: 48px;
+    right: 194px;
+}
+
+.sign-up-button input {
+    color: #c8855d !important;
+    border: none !important;
+    font-size: 34px;
+    letter-spacing: 2px;
+    font-family: 'Prestage Regular' !important;
+    text-align: center;
+}
+
+.preference-new{
+  background: black;
+}
+

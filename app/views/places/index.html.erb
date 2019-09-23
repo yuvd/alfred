@@ -13,7 +13,7 @@
 
 
   <div class="slider2">
-    <% @places.each do |place| %>
+    <% @places.each_with_index do |place, i| %>
       <div class="card-category slide-cat-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0))" >
         <header class="slide-overlay">
           <div class="text">
@@ -25,7 +25,13 @@
           </div>
 
           <div class="image-container">
-            <img src="<%= image_path 'city-lights.png' %>" alt="pic" class="img">
+             <% if i<5  %>
+                <% image = @pictures[i] %>
+                <%= image_tag image, class: "img" %>
+              <% else %>
+                <% image = @pictures[i%5] %>
+                <%= image_tag image, class: "img" %>
+              <% end %>
           </div>
           <div class="line">
           </div>
@@ -45,13 +51,7 @@
             <p id="description2"></p>
           </div>
           <div class="d-flex justify-content-between">
-            <div class="line-schedule">
-              <p id="footer"><%= link_to 'schedule', new_place_bookmark_path(place) %></p>
 
-      
-
-
-            <div class="d-flex justify-content-between">
               <div class="line-schedule">
                 <p id="footer"><%= link_to 'schedule', new_place_bookmark_path(place) %></p>
               </div>
@@ -60,14 +60,11 @@
               </div>
               <div class="line-schedule">
                 <p id="footer"><%= link_to 'map', map_path(place) %></p>
-              </div>
-            </div>
+          </div>
 
           </main>
 
         </div>
-      </div>
-    </section>
 
     <% end %>
   </div>

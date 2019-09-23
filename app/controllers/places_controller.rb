@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
 
   def index
-    # @pictures = [ "image_path 'city-lights2.jpeg'","image_path 'city-lights2.jpeg'", "image_path 'blur2.png'", "image_path 'Hobbies.png'", "image_path 'Hobbies2.png'"]
+     @pictures = [ 'city-lights.png', 'night2.jpeg', 'light-city.jpeg', 'cityy.jpeg', 'red-city.jpeg']
 
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
     if params[:category]
