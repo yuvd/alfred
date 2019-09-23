@@ -13,8 +13,8 @@
 
 
 
-<div class="frame-slider">
-  <div class="slider">
+  <div class="frame-slider">
+    <div class="slider">
 
       <% @places.each do |place| %>
       <section>
@@ -29,6 +29,21 @@
                   <p id="location"><%= place.location %></p>
                 </div>
               </div>
+
+
+
+
+
+            <!--   <div class="image-container">
+              <%#  @places.each_with_index do |p,i|%>
+                <%# if i < 5 %>
+                <img src= <%# @pictures[0] %> alt="">
+                <%# else %>
+                <img src="<%# 'picture[i%5]' %>" alt="">
+                <%# end %>
+              <%# end %>
+              </div> -->
+
 
               <div class="image-container">
                 <img src="<%= image_path 'city-lights.png' %>" alt="pic" class="img">
@@ -56,23 +71,20 @@
                 <p id="footer"><%= link_to 'schedule', new_place_bookmark_path(place) %></p>
               </div>
               <div class="line-schedule">
-                <p id="footer"><%=link_to "forum", place_forums_path(place), method: post%></p>
+                <p id="footer"><%=link_to "forum", place_forums_path(place), method: :post%></p>
               </div>
               <div class="line-schedule">
                 <p id="footer">map</p>
               </div>
             </div>
+
           </main>
+
         </div>
       </div>
     </section>
-      <% end %>
+    <% end %>
   </div>
 </div>
-
-
-
-
-
 
 

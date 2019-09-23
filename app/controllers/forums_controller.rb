@@ -11,7 +11,7 @@ class ForumsController < ApplicationController
   def create
     redirect_to place_forum_path(params[:place_id]) if Forum.exists?(Place.find(params[:place_id]).forum)
 
-    @forum = Forum.create!(place: params[:place_id])
+    @forum = Forum.create!(place: Place.find(params[:place_id]))
     redirect_to place_forum_path(params[:place_id])
   end
 

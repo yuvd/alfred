@@ -1,6 +1,8 @@
 class PlacesController < ApplicationController
 
   def index
+    # @pictures = [ "image_path 'city-lights2.jpeg'","image_path 'city-lights2.jpeg'", "image_path 'blur2.png'", "image_path 'Hobbies.png'", "image_path 'Hobbies2.png'"]
+
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
     if params[:category]
       unless Place.where({city: current_user.location, category: Category.find_by(name:params[:category])}).empty?
@@ -36,6 +38,7 @@ class PlacesController < ApplicationController
     end
 
     @bookmark = Bookmark.new
+
 
   end
 
