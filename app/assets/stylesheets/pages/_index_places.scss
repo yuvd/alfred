@@ -15,20 +15,19 @@ body {
     border-radius: 0px 30px 0px 0px;
     position: relative;
     top: -45px;
-    right: -78px;
-    -webkit-clip-path: polygon(111% 0%, 0% 0%, 101% 101%);
-    clip-path: polygon(111% 0%, 0% 0%, 101% 101%);
+    right: -168px;
+        clip-path: polygon(142% 0%, 0% 0%, 114% 101%);
 
 }
 
 .line {
-        border-bottom: 4px solid #bbb607;
+   border-bottom: 4px solid #bbb607;
     opacity: 0.8;
     width: 172px;
-    transform: rotate(49deg);
+    transform: rotate(45deg);
     position: relative;
     top: -259px;
-    left: 105px;
+       left: 124px;
 }
 
 .text {
@@ -38,13 +37,13 @@ position: absolute;
 }
 
 .square-line {
-border-left: 4px solid #b3b50e;
+    border-left: 4px solid #b3b50e;
     border-bottom: 4px solid #a9ac16;
     width: 161px;
     position: relative;
-    top: -225px;
+    top: -233px;
     right: 0;
-    height: 161px;
+    height: 142px;
 }
 
 .square-line-body {
@@ -52,7 +51,7 @@ border-right: 4px solid #b3b50e;
     border-bottom: 4px solid #a9ac16;
     width: 161px;
     position: relative;
-    top: -152px;
+    top: -172px;
     right: -209px;
     height: 161px;
     text-align: right;
@@ -72,7 +71,7 @@ border-left: 4px solid #b3b50e;
 
 .text-body {
    position: relative;
-    top: -323px;
+        top: -343px;
     right: 43px;
     font-family: 'Prestage Regular';
     color: white !important;
@@ -184,7 +183,7 @@ header {
     width: 100px;
     position: relative;
     /* top: 2px; */
-    bottom: 223px;
+   bottom: 266px;
     right: 0;
     height: 63px;
     text-align: right;

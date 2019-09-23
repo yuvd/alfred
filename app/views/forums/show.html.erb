@@ -16,7 +16,7 @@
 <div class="notification-forum">
   <img src="<%=post.user.photo%>" class="avatar-large" />
   <div class="notification-content">
-    <p><small><strong><%=post.user.nickname%></strong> on <%=post.created_at.strftime("%d/%m/%y at %I:%M%p")%></small></p>
+    <p><small><%=post.user.nickname%> on <%=post.created_at.strftime("%d/%m/%y at %I:%M%p")%></small></p>
     <p><%=post.description%></p>
     <div id="votes-container">
       <%=render 'votes', post: post%>

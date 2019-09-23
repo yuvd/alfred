@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # get 'reviews/new'
   # get 'reviews/create'
   # get 'places/businesses'
@@ -9,10 +8,11 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:edit, :update, :destroy] do
     resources :post_votes, only: [:create]
+    resources :post_replies, only: [:create, :new]
   end
   resources :post_votes, only: [:destroy]
   resources :forums, only: [:index, :show] do 
-    resources :posts, only: [:new, :create]
+    resources :posts, only: [:new, :create, :show]
   end
   get 'places/map', to: 'places#map', as: 'map'
   get 'profile', to: 'pages#profile', as: 'profile'

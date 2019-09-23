@@ -1,0 +1,4 @@
+<%= simple_form_for [@forum, @post_reply]  do |f| %>
+  <%= f.input :description %>
+  <%= f.submit "Submit post", class: "btn btn-primary" %>
+<% end %>
