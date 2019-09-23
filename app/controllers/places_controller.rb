@@ -11,7 +11,7 @@ class PlacesController < ApplicationController
 
         businesses = Businesses.get_businesses(params[:category], current_user.location)
         businesses.each do |business|
-          if Place.find_by(name: business["name"]).nil?
+          if Place.find_by(name: business["name"]).blank?
             unless business["location"]["address1"].blank?
               Place.create!(name: business["name"], location: business["location"]["address1"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: params[:category]))
             else
@@ -71,8 +71,8 @@ class PlacesController < ApplicationController
     def populate_places_with_businesses(category)
       businesses = Businesses.get_businesses(category, current_user.location)
       businesses.each do |business|
-        if Place.find_by(name: business["name"]).nil?
-          unless business["location"]["address1"].nil?
+        if Place.find_by(name: business["name"]).blank?
+          unless business["location"]["address1"].blank?
             Place.create!(name: business["name"], location: business["location"]["address1"], photo: business["image_url"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: category))
           else
             Place.create!(name: business["name"], location: "#{current_user.location} Area", photo: business["image_url"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: category))

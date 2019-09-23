@@ -18,7 +18,15 @@ class PostsController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    @post = Post.find(params[:id])
+    forum = @post.forum
+    @post.destroy
+    respond_to do |format|
+      format.html { redirect_to forum_path(forum) }
+      format.js
+    end
+
   end
 
   def post_params
