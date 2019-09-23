@@ -1,1 +1,2 @@
-document.querySelector("[data-votes-counter-id='<%= @postvote.post.id %>']").innerHTML = <%=@postvote.post.post_votes.count%> + " votes";
+vc = document.getElementById("votes-container");
+vc.innerHTML = "<%= j render 'forums/votes', post: @post%>";
