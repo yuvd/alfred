@@ -1,25 +1,27 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%# "black-background" if current_page?(new_user_preference_path(current_user) && bookmarks_path) %>">
-<!-- <p class="logo">ALFRED</p> -->
-<%= link_to "Alfred", root_path, class: "logo" %>
 
 
-<!--   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> -->
+<div class="p-3">
 
+<div class="d-flex justify-content-between">
+  <%= link_to "Alfred", root_path, class: "logo" %>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <div class="nav-item">
-          <%= link_to "schedule", bookmarks_path(current_user), class: "nav-link" %>
-        </div>
+
+
+       <%= link_to bookmarks_path(current_user) do %>
+   <%= image_tag "schedule copy.png", class: "nav-schedule" %>
+<% end %>
+
+          <%# link_to "schedule", bookmarks_path(current_user), class: "" %>
+
 
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+
+
+
+          <%= link_to "Login", new_user_session_path, class: "" %>
+
       <% end %>
-    </ul>
-  </div>
+
+</div>
 </div>

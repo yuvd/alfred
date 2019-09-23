@@ -23,7 +23,7 @@
 .square-line-bookmarks {
     width: 239px;
     position: relative;
-    top: -223px;
+    top: -233px;
     right: 0;
     height: 93px;
     border-bottom: 4px solid green;
@@ -55,9 +55,9 @@
 
 .position {
    position: relative;
-    top: 328px;
+    top: 250px;
     color: white;
-    right: -216px;
+    right: -47px;
   a {
     color: white;
   }
@@ -67,25 +67,25 @@
 
 .schedule-this-place  {
     position: relative;
-    top: 36px;
+    top: 24px;
     color: white;
-    right: -23px;
+    right: -15px;
 }
 
 
 .book-a-time {
-       position: relative;
+     position: relative;
     color: white;
-    right: -212px;
+    right: -23px;
     letter-spacing: 2px !important;
-    top: 234px;
+    top: 149px;
     font-family: Prestage Regular;
 }
 
 .card-category-mark {
      background-color: rgba(0, 0, 0, 0.7) !important;
     padding: 20px;
-    height: 597px;
+    height: 460px;
     color: white;
     font-size: 24px;
     border-radius: 5px;
@@ -101,12 +101,12 @@
 
 
 .square-line-bookmarks2 {
-  width: 231px;
+    width: 97px;
     position: relative;
-    top: -104px;
-    right: -129px;
-    height: 140px;
-    border-bottom: 4px solid green;
+    top: -159px;
+    right: -142px;
+    height: 96px;
+
     border-right: 4px solid green;
     z-index: -1;
 }
@@ -120,9 +120,10 @@
 }
 
 .plus1 {
-    position: relative;
-    top: 326px;
-    right: -206px;
+
+         position: relative;
+    top: 248px;
+    right: -39px;
     font-size: smaller;
     text-decoration: none;
 
@@ -142,12 +143,25 @@ a {
 }
 
 #good-choice {
-  font-size: 13px;
+    font-size: 13px;
     letter-spacing: 1px;
     color: green;
     font-family: "Titillium Web", "light 300" !important;
     position: relative;
-    bottom: 62px;
-    left: 10px;
+    bottom: 100px;
+    left: 158px;
 
+}
+
+.review-icon {
+
+    font-size: 15px;
+    color: green;
+
+}
+
+.good-choice {
+  position: relative;
+  bottom: 138px;
+    right: -100px;
 }
