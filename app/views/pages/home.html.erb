@@ -8,13 +8,13 @@
     <% if user_signed_in? %>
 
 
-    <div class="text-homepage">
-      <p id="place-name">Where are we going?</p>
-        <p id="alfred-homepage">Your, Travel Butler Alfred.</p>
-    </div>
+ <div class="text-hom">
+                <p id="place-name">Where are we going?</p>
+                  <p id="alfred">Your, Travel Butler Alfred.</p>
+                  <div>
 
 
-    <div class="lower-box">
+
     <%= render 'address_form.erb' %>
 
     <div class="nav-item dropdown mt-3 d-flex justify-content-center">
@@ -25,7 +25,6 @@
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
     </div>
-</div>
     <% else %>
 
     <!-- <h1 class="mt-5"> Hi friend,</h1>
