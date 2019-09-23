@@ -204,6 +204,7 @@ position: absolute;
   width: 15px;
   position: relative;
   left: 24px;
+  z-index: 2;
 }
 
 .box-preference-progress-2 {
@@ -212,6 +213,8 @@ position: absolute;
   width: 20px;
   position: relative;
   left: 30px;
+   z-index: 2;
+   background-color: #c8855d;
 }
 
 .squares {

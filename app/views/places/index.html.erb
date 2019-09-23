@@ -11,6 +11,7 @@
     </div>
   </div>
 
+
   <div class="slider2">
     <% @places.each do |place| %>
       <div class="card-category slide-cat-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0))" >
@@ -24,7 +25,7 @@
           </div>
 
           <div class="image-container">
-            <img src="<%= image_path 'sailing2.png' %>" alt="pic" class="img">
+            <img src="<%= image_path 'city-lights.png' %>" alt="pic" class="img">
           </div>
           <div class="line">
           </div>
@@ -46,23 +47,29 @@
           <div class="d-flex justify-content-between">
             <div class="line-schedule">
               <p id="footer"><%= link_to 'schedule', new_place_bookmark_path(place) %></p>
-            </div>
-            <div class="line-schedule">
-              <p id="footer">forum</p>
 
+      
+
+
+            <div class="d-flex justify-content-between">
+              <div class="line-schedule">
+                <p id="footer"><%= link_to 'schedule', new_place_bookmark_path(place) %></p>
+              </div>
+              <div class="line-schedule">
+                <p id="footer"><%=link_to "forum", place_forums_path(place), method: :post%></p>
+              </div>
+              <div class="line-schedule">
+                <p id="footer"><%= link_to 'map', map_path(place) %></p>
+              </div>
             </div>
-            <div class="line-schedule">
-              <p id="footer">map</p>
-            </div>
-          </div>
-        </main>
+
+          </main>
+
+        </div>
       </div>
+    </section>
+
     <% end %>
   </div>
-
-
-
-
-
 
 
