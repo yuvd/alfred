@@ -1,1 +1,2 @@
 document.querySelector("[data-votes-counter-id='<%= @postvote.post.id %>']").innerHTML = <%=@postvote.post.post_votes.count%> + " votes";
+document.querySelector("[data-votes-counter-id='<%= @postvote.post.id %>']").replaceWith("ass");
