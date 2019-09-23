@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'places/map', to: 'places#map', as: 'map'
   get 'profile', to: 'pages#profile', as: 'profile'
   resources :places do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :index]
     resources :bookmarks, only: [:new, :create]
     resources :forums, only: [:create]
   end

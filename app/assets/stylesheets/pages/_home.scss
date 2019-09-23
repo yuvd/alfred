@@ -1,4 +1,6 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
 
 .box_page {
   border-bottom: 3px solid white;
@@ -52,4 +54,74 @@ background-size:cover;
   fill: white;
   margin-top: 10px;
   margin-right: 10px;
+}
+
+
+
+
+.logo_wrapper {
+  text-align:center;
+  background:transparent !important;
+  color:white;
+  font-family:'Roboto';
+  font-weight:600;
+  font-size:22px;
+  padding-top:10vh;
+  height:200px;
+  overflow:hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0,0,0);
+}
+.logo_main {
+  font-size: 32px;
+}
+
+.sublogo {
+  font-size: 16px;
+}
+
+.logo_anim {
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.logo_anim:first-of-type {    /* For increasing performance
+                       ID/Class should've been used.
+                       For a small demo
+                       it's okaish for now */
+  animation: showup 8s;
+}
+
+.logo_anim:last-of-type {
+  width:0px;
+  animation: reveal 9s;
+}
+
+.logo_anim:last-of-type span {
+  margin-left:-300px;
+  animation: slidein 10s;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:1;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:125px;}
+    80% {opacity:1;}
+    100% {opacity:1;width:125px;}
 }
