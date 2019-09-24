@@ -35,5 +35,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @forum = @post.forum
   end
 end

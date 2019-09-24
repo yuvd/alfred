@@ -1,4 +1,4 @@
 <%= simple_form_for [@forum, @post_reply], url: post_post_replies_path(params[:post_id]) do |f| %>
-  <%= f.input :description %>
-  <%= f.submit "Submit reply", class: "btn btn-primary" %>
+  <%= f.input :description, placeholder: "Write a reply" %>
+  <%= f.submit "Submit reply", class: "btn button-reply" %>
 <% end %>
