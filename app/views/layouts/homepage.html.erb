@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable"  content="yes">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Alfred</title>
@@ -8,7 +10,9 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <link rel="manifest" href="<%= asset_path 'manifest.json.erb' %>">
 
+     <%= render 'shared/ios_pwa_links' %>
   </head>
   <body class="home-page-layout">
     <%= render 'shared/navbar' %>
