@@ -37,6 +37,14 @@ input#post_description {
     position: relative;
     bottom: 100px;
     background-color: white !important;
+    color: gray !important;
+    font-size: 20px !important;
+}
+
+input#post_description::placeholder {
+    color: gray !important;
+    font-size: 20px !important;
+    text-align: center
 }
 
 
@@ -55,3 +63,4 @@ input#post_description {
     position: relative;
     bottom: 109px;
 }
+

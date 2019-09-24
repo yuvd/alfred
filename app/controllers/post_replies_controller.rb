@@ -1,6 +1,7 @@
 class PostRepliesController < ApplicationController
   def new
     @post_reply = PostReply.new
+    @forum = Post.find(params[:post_id]).forum
   end
 
   def create

@@ -1,7 +1,40 @@
-<p> <%=@post.description%> </p>
-<%= link_to  "back", forum_path(@post.forum) %>
-<h2>replies</h2>
-<%@post.post_replies.each do |reply|%>
-<p><%=reply.description%></p>
-<%end%>
-<%= link_to  "add reply", new_post_post_reply_path(@post) %>
+<div class="forum_placename">
+    <h3>Add correct place name</h3>
+    <p>Thread</p>
+<div class="styling_lines_box_forum"></div>
+</div>
+</div>
+
+<div class="ml-3">
+  <%=link_to "Back to Forum", forum_path(@forum)%>
+</div>
+
+<div class="notification-thread" data-notification-id="<%=@post.id%>">
+
+  <div class="notification-content">
+
+    <div class="">
+
+
+      <div class="d-flex justify-content-between margin-forum">
+      <div class="title-forum-box">
+        <small id="absolute-review"><%=@post.user.nickname%> on <%=@post.created_at.strftime("%d/%m/%y at %I:%M%p")%></small>
+      </div>
+
+      </div>
+    </div>
+    <p><%=@post.description%></p>
+    <div id="votes-container">
+      <%#render 'votes'%>
+    </div>
+
+  </div>
+</div>
+
+<%# render 'reply_form'%>
+
+<!-- <div class="container">
+  <%@post.post_replies.each do |post|%>
+   <%#  post.name%>
+  <%end%>
+</div> -->

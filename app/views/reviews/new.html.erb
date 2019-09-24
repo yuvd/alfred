@@ -19,7 +19,7 @@
     <div class="col-xs-4">
       <%= simple_form_for([@place, @review]) do |f| %>
       <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-        <%= f.input :content, placeholder: "Write a review" %>
+        <%= f.input :content, placeholder: "Leave a review here. -Alfred" %>
         <%= f.button :submit, "SAVE", class: "button-reviews"  %>
       <% end %>
     </div>
