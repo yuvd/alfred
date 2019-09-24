@@ -33,27 +33,27 @@ body {
 .text {
 position: absolute;
     padding-left: 36px;
-    margin-top: 72px;
+    margin-top: 34px;
 }
 
 .square-line {
-    border-left: 4px solid #b3b50e;
+   border-left: 4px solid #b3b50e;
     border-bottom: 4px solid #a9ac16;
-    width: 161px;
+    width: 171px;
     position: relative;
-    top: -233px;
+    top: -221px;
     right: 0;
-    height: 142px;
+    height: 170px;
 }
 
 .square-line-body {
-border-right: 4px solid #b3b50e;
+    border-right: 4px solid #b3b50e;
     border-bottom: 4px solid #a9ac16;
     width: 161px;
     position: relative;
-    top: -160px;
+    top: -187px;
     right: -209px;
-    height: 185px;
+    height: 167px;
     text-align: right;
 }
 
@@ -71,7 +71,7 @@ border-left: 4px solid #b3b50e;
 
 .text-body {
     position: relative;
-    top: -352px;
+    top: -368px;
     right: 43px;
     min-height: 200px;
     font-family: 'Prestage Regular';
@@ -155,7 +155,7 @@ header {
 }
 
 #location {
-    font-size: 13px;
+    font-size: 16px;
     letter-spacing: 1px;
     color: yellow;
     font-style: italic;
@@ -173,8 +173,8 @@ header {
 
 #all_reviews {
   // font-family: 'Titillium Web';
-  font-size: 16px;
-  letter-spacing: 1px;
+      font-size: 23px;
+    letter-spacing: 1px;
 }
 
 #description2 {
@@ -190,7 +190,7 @@ header {
     width: 100px;
     position: relative;
     /* top: 2px; */
-    bottom: 311px;
+        bottom: 360px;
     right: 0;
     height: 63px;
     text-align: right;
@@ -222,7 +222,7 @@ header {
     scroll-snap-align: start;
     position: relative;
     height: 600px;
-    transform: translateY(400px);
+    transform: translateY(301px);
     transition: transform 0.7s ease-in;
     main {
     transition: opacity 0.8s linear;
@@ -231,7 +231,7 @@ header {
     }
   }
   .slide-cat-item.new-expanded {
-    transform: translateY(50px);
+    transform: translateY(29px);
 
     main {
       opacity: 1;
@@ -300,3 +300,84 @@ header {
     border-radius: 2px;
   }
 
+
+
+p#place-name-new {
+    font-size: 33px;
+        margin-bottom: 0px;
+}
+
+#place-name-review {
+    letter-spacing: 2px;
+    text-align: right;
+    margin-bottom: 0 !important;
+    font-size: 33px !important;
+}
+
+p#category-card {
+    font-size: 21px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+#location-review {
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: yellow;
+    font-style: italic;
+    font-family: "Titillium Web", "light 300" !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 286px;
+    margin-top: 6px;
+}
+.star-rating.mb-2 {
+    position: absolute;
+    top: 63px;
+}
+
+
+
+.text {
+    position: absolute;
+    padding-left: 36px;
+    margin-top: 46px;
+}
+
+.location-card {
+  margin-top: 28px;
+}
+
+#intro-index-places {
+       font-family: 'Titillium Web';
+    color: yellow !important;
+    text-align: right;
+    padding-left: 24px;
+    letter-spacing: 2px;
+    font-size: 16px !important;
+    margin-top: 38px;
+    margin-right: 18px;
+    font-style: italic;
+}
+
+#intro-index-places-alfred {
+font-family: 'Titillium Web';
+    color: yellow !important;
+    text-align: right;
+    /* padding-left: 24px; */
+    /* padding-bottom: 56px; */
+    margin-right: 20px;
+    letter-spacing: 2px;
+    font-size: 16px !important;
+}
+
+.places-intro {
+ transition:  2s ease-out;
+}
+
+.nav-line {
+  border-bottom: 1px solid white;
+
+}
