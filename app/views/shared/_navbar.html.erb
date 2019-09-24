@@ -1,21 +1,36 @@
 <% if controller_name == "preferences" && action_name == "new" %>
   <div class="p-3 preference-new">
+  <% elsif controller_name == "pages" && action_name == "home"%>
+  <div class="d-none">
 <% else %>
   <div class="p-3">
 <% end %>
 
 
 <div class="d-flex justify-content-between">
-<div>
-<%= link_to "Alfred", root_path, class: "logo" %>
-</div>
+<!-- <div>
+
+
+</div> -->
 
       <% if user_signed_in? %>
 
+<div class="navbar_icons">
+  <%= link_to root_path do %>
+    <%= image_tag "butler-logo.png", class: "logo" %>
+  <% end %>
+</div>
 
-       <%= link_to bookmarks_path(current_user) do %>
-   <%= image_tag "schedule copy2.png", class: "nav-schedule" %>
-<% end %>
+<div>
+  <%= link_to places_path(current_user) do %>
+    <%= image_tag "globe.png", class: "nav-schedule" %>
+  <% end %>
+
+  <%= link_to bookmarks_path(current_user) do %>
+    <%= image_tag "schedule copy2.png", class: "nav-schedule" %>
+  <% end %>
+</div>
+
 
           <%# link_to "schedule", bookmarks_path(current_user), class: "" %>
 
@@ -27,6 +42,7 @@
           <%= link_to "Login", new_user_session_path, class: "" %>
 
       <% end %>
+
 
 </div>
 </div>
