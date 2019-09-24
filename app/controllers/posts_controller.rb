@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     @post.forum = Forum.find(params[:forum_id])
     @post.save!
-    redirect_to forum_post_path(@post.forum, @post)
+    redirect_to forum_path(@post.forum, @post)
   end
 
   def edit
