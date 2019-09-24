@@ -30,3 +30,19 @@
   color: #167FFB !important;
 }
 
+.notification-thread {
+    margin: 0;
+    line-height: 1.4;
+    margin-top: 11px;
+    margin-right: 5px;
+    margin-left: 5px;
+        display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    background: white;
+    padding: 5px 4px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    opacity: 0.9;
+}
+
