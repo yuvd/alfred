@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     @post.forum = Forum.find(params[:forum_id])
     @post.save!
-    redirect_to forum_post_path(@post.forum, @post)
+    redirect_to forum_path(@post.forum, @post)
   end
 
   def edit
@@ -34,6 +34,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post_id])
+    @forum = @post.forum
   end
 end

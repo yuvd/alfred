@@ -5,9 +5,10 @@ form#new_review {
 }
 
 p#review-title {
-    position: relative;
-    top: -130px;
+        position: relative;
+    top: -122px;
     right: -28px;
+    font-size: 23px;
 }
 
 .card-category-review {
@@ -115,13 +116,23 @@ height: 265px;
 }
 
 
+
+
 input#review_content {
-        /* border: 1px solid white; */
     height: 153px;
     width: 312px;
     margin-left: 24px;
+    position: relative;
+    bottom: 4px;
     background-color: white !important;
+    color: gray !important;
+    font-size: 20px !important;
+}
 
+input#review_content::placeholder {
+    color: gray !important;
+    font-size: 20px !important;
+    text-align: center
 }
 
 .br-wrapper.br-theme-css-stars {
@@ -146,3 +157,4 @@ input#review_content {
     font-size: 22px;
     color: rgba(250,250,250, 0.6);
 }
+

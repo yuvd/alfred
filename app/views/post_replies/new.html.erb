@@ -1,1 +1,16 @@
-<%= render 'form', post_reply: @post_reply%>
+
+<div class="forum_placename">
+                <h3>Add correct name</h3>
+                <div class="styling_lines_box_post"></div>
+              </div>
+
+<div class="ml-3">
+  <%=link_to "Back to Forum", forum_path(@forum)%>
+</div>
+
+
+<div class="notification-post">
+  <%= render 'form', post_reply: @post_reply%>
+</div>
+
+

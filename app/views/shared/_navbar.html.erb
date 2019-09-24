@@ -6,13 +6,15 @@
 
 
 <div class="d-flex justify-content-between">
+<div>
 <%= link_to "Alfred", root_path, class: "logo" %>
+</div>
 
       <% if user_signed_in? %>
 
 
        <%= link_to bookmarks_path(current_user) do %>
-   <%= image_tag "schedule copy.png", class: "nav-schedule" %>
+   <%= image_tag "schedule copy2.png", class: "nav-schedule" %>
 <% end %>
 
           <%# link_to "schedule", bookmarks_path(current_user), class: "" %>

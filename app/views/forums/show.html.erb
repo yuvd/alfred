@@ -1,4 +1,15 @@
-<h1>Forums#show</h1>
+
+
+
+<div class="forum_placename">
+                <h3><%= @place.name %></h3>
+                <p>Forum</p>
+                <div class="styling_lines_box_forum"></div>
+              </div>
+
+<div class="ml-3">
+  <%=link_to "Add New Post", new_forum_post_path(@forum)%>
+</div>
 
 <div id="avatars-carousel" class="carousel slide" data-ride="carousel">
   <%first_user_avatar_drawn = false%>
@@ -14,26 +25,36 @@
 <div class="container">
 <%@posts.each do |post|%>
 <div class="notification-forum" data-notification-id="<%=post.id%>">
-  
+
   <div class="notification-content">
-    <p><img src="<%=post.user.photo%>" class="avatar-large height-100" /><small><%=post.user.nickname%> on <%=post.created_at.strftime("%d/%m/%y at %I:%M%p")%></small></p>
+
+    <div class="">
+      <!-- <p><img src="<%=post.user.photo%>" class="avatar-large height-100" /> -->
+
+      <div class="d-flex justify-content-between margin-forum">
+      <div class="title-forum-box">
+        <small id="absolute-review"><%=post.user.nickname%> on <%=post.created_at.strftime("%d/%m/%y at %I:%M%p")%></small>
+      </div>
+      <div class="notification-forum-actions">
+      <%if current_user == post.user%>
+          <!-- <a href="#"><i class="fas fa-pencil-alt"></i></a> -->
+          <%= link_to post_path(post), method: :delete, remote: true do %>
+          <i class="far fa-trash-alt""></i>
+          <%end%>
+      <%end%>
+          <%= link_to forum_post_path(forum_id: @forum, post_id: post) do %>
+            <i class="fas fa-reply"></i>
+          <%end%>
+        </div>
+      </div>
+    </div>
     <p><%=post.description%></p>
     <div id="votes-container">
       <%=render 'votes', post: post%>
     </div>
-      <div class="notification-forum-actions">
-    <%if current_user == post.user%>
-        <a href="#"><i class="fas fa-pencil-alt"></i></a>
-        <%= link_to post_path(post), method: :delete, remote: true do %>
-        <i class="far fa-trash-alt""></i>
-        <%end%>
-    <%end%>
-        <%= link_to new_post_post_reply_path(post) do%>
-        <i class="fas fa-reply"></i>
-        <%end%>
-      </div>
+
   </div>
 </div>
 <%end%>
 </div>
-<%=link_to "new post", new_forum_post_path(@forum)%>
+

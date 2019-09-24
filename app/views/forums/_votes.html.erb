@@ -5,6 +5,7 @@
         <span data-votes-counter-id="<%=post.id%>"><%=post.post_votes.count%> votes</span>
       <%else%>
         <p><%= link_to post_vote_path(post.post_votes.where(user: current_user).first), method: :delete, remote: true do %>
+
         <i class="far fa-thumbs-down" id="vote"></i>
         <%end%>
         <span data-votes-counter-id="<%=post.id%>"><%=post.post_votes.count%> votes</span>

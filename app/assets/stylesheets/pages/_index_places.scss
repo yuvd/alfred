@@ -241,7 +241,7 @@ header {
 
 .text-home {
     position: relative;
-    top: 118px;
+    top: 97px;
 }
 
 // * {
@@ -279,4 +279,24 @@ header {
     font-family: "Titillium Web", "light 300" !important;
     text-align: center;
 }
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 6rem;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    font-size: 1rem;
+    color: #0E0000;
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+  }
 
