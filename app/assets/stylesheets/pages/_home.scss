@@ -61,6 +61,37 @@ background-size:cover;
 }
 
 
+.logo_icon_wrapper {
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  overflow:hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.logo_gen {
+  opacity: 0;
+}
+
+.logo_icon {
+  height: 100%;
+  overflow:hidden;
+  white-space:nowrap;
+  -webkit-animation: load 10s;
+  animation: load 60s;
+}
+
+// .logo_icon {
+//   animation: showup 8s;
+// }
+
+@keyframes load {
+    0% {opacity: 0;}
+    10% {opacity: 1;}
+    100% {opacity: 1;}
+}
 
 
 .logo_wrapper {
@@ -70,7 +101,7 @@ background-size:cover;
   font-family:'Roboto';
   font-weight:600;
   font-size:22px;
-  padding-top:10vh;
+  padding-top:19vh;
   height:200px;
   overflow:hidden;
   -webkit-backface-visibility: hidden;
@@ -97,22 +128,30 @@ background-size:cover;
                        ID/Class should've been used.
                        For a small demo
                        it's okaish for now */
+  animation-delay: 10s;
   animation: showup 8s;
 }
 
+// .logo_anim:nth-of-type(2) {
+//   animation: showup 8s;
+//   animation-delay: 3s;
+// }
+
 .logo_anim:last-of-type {
   width:0px;
-  animation: reveal 9s;
+  animation: reveal 12s;
 }
 
 .logo_anim:last-of-type span {
   margin-left:-300px;
-  animation: slidein 10s;
+  animation: slidein 12s;
 }
 
 @keyframes showup {
     0% {opacity:0;}
-    20% {opacity:1;}
+    10% {opacity:0;}
+    30% {opacity:1;}
+    60% {opacity:1;}
     80% {opacity:1;}
     100% {opacity:1;}
 }
@@ -143,6 +182,7 @@ background-size:cover;
   position:relative;
   top:63px;
 }
+
 
 #alfred-homepage {
     font-size: 13px;

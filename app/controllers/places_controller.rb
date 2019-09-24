@@ -40,6 +40,10 @@ class PlacesController < ApplicationController
     @bookmark = Bookmark.new
 
 
+    # @place = Place.find(params[:id])
+    # @reviews = @place.reviews.to_a
+    # @avg_rating = @reviews.blank? ? 0 : @place.reviews.average(:rating).floor
+
   end
 
     def show
