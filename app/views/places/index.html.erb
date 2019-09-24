@@ -44,12 +44,36 @@
          </div>
          <div class="text-body" id="description">
           <p id="place-name-review">Reviews</p>
-            <% place.reviews.last(2).reverse.each do |review| %>
-            <p id="location"><%= review.content %></p>
+        <% reviews = place.reviews %>
+        <% @avg_rating = reviews.blank? ? 0 : reviews.average(:rating).floor%>
+        <% if place.reviews.length == 0 %>
+          <br>
+        <% else %>
+          <div class="star-rating ml-3 mb-2">
+            <% if @avg_rating == 5 %>
+              <% 5.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            <% else %>
+              <% @avg_rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            <% (5 - @avg_rating).times do %>
+              <i class="far fa-star"></i>
             <% end %>
+            <% end %>
+          </div>
+        <% end %>
+          <% place.reviews.last(2).reverse.each do |review| %>
+            <p id="location"><%= review.content %></p>
+          <% end %>
+          <% if place.reviews.length == 0 %>
+            <p id="all_reviews">no reviews yet</p>
+          <% else %>
             <p id="all_reviews"><%= link_to 'read all', place_reviews_path(place) %></p>
             <p id="description2"></p>
-          </div>
+          <% end %>
+         </div>
           <div class="d-flex justify-content-between">
 
 
