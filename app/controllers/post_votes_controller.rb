@@ -1,9 +1,9 @@
 class PostVotesController < ApplicationController
   def create
-    @postvote = PostVote.create!(user: current_user, post: Post.find(params[:post_id]))
-    @post = @postvote.post
+    @post = Post.find(params[:post_id])
+    @postvote = PostVote.create!(user: current_user, post: @post)
     respond_to do |format|
-      format.html { redirect_to place_forum_path(Post.find(params[:post_id]).forum) }
+      format.html { redirect_to place_forum_path(@post.forum) }
       format.js
     end
   end
@@ -13,7 +13,7 @@ class PostVotesController < ApplicationController
     @post = @postvote.post
     @postvote.destroy
     respond_to do |format|
-      format.html { redirect_to place_forum_path(Post.find(params[:post_id]).forum) }
+      format.html { redirect_to place_forum_path(@post.forum) }
       format.js
     end
   end

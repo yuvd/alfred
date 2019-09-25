@@ -1,2 +1,2 @@
-vc = document.getElementById("votes-container");
-vc.innerHTML = "<%= j render 'forums/votes', post: @post%>";
+container = document.querySelector("[data-votes-container-id='<%= @post.id %>']")
+container.innerHTML = "<%= j render 'forums/votes', post: @post%>";
