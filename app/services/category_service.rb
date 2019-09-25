@@ -17,7 +17,6 @@ class CategoryService
     end
 
     actual_categories.push("Gyms")
-    actual_categories.push("Pharmacies")
     actual_categories.push("Swimming")
     
     return actual_categories
