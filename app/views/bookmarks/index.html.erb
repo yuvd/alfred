@@ -11,17 +11,17 @@
 
 <ul class="nav nav-tabs d-flex justify-content-start pl-3 pt-3" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="schedule-tab" data-toggle="tab" href="#schedule" role="tab" aria-controls="profile" aria-selected="false">Schedule</a>
+    <a class="nav-link active" id="schedule-tab" data-toggle="tab" href="#schedule" role="tab" aria-controls="profile" aria-selected="true">Schedule</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="home-tab" data-toggle="tab" href="#list" role="tab" aria-controls="home" aria-selected="true">List</a>
+    <a class="nav-link" id="home-tab" data-toggle="tab" href="#list" role="tab" aria-controls="home" aria-selected="false">List</a>
   </li>
 </ul>
 
 
 
 <div class="tab-content d-flex justify-content-center" id="myTabContent">
-  <div class="tab-pane mt-0 fade show active" id="list" role="tabpanel" aria-labelledby="home-tab">
+  <div class="tab-pane mt-0 fade " id="list" role="tabpanel" aria-labelledby="schedule-tab">
     <% @bookmarks.each do |bookmark| %>
     <div class="square-line-list">
               </div>
@@ -46,7 +46,7 @@
     <%end%>
 
   </div>
-  <div class="tab-pane fade d-flex justify-content-center" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+  <div class="tab-pane fade show active d-flex justify-content-center" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
     <div>
     <% @bookmarks_schedule.each do |bookmark| %>
     <div class="schedule">
