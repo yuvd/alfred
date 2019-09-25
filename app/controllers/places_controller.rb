@@ -71,15 +71,15 @@ class PlacesController < ApplicationController
         }
       end
     end
-
+    
     def populate_places_with_businesses(category)
       businesses = Businesses.get_businesses(category, current_user.location)
       businesses.each do |business|
         if Place.find_by(name: business["name"]).blank?
           unless business["location"]["address1"].blank?
-            Place.create!(name: business["name"], location: business["location"]["address1"], photo: business["image_url"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: category))
+            Place.create!(name: business["name"], location: business["location"]["address1"], photo: business["image_url"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: (current_user.location.split(",")[0]), category: Category.find_by(name: category))
           else
-            Place.create!(name: business["name"], location: "#{current_user.location} Area", photo: business["image_url"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: category))
+            Place.create!(name: business["name"], location: "#{(current_user.location.split(",")[0]).downcase} Area", photo: business["image_url"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: category))
           end
         end
       end
