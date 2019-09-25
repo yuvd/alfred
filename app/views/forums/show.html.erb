@@ -3,12 +3,15 @@
 
 <div class="forum_placename">
                 <h3><%= @place.name %></h3>
+
                 <p>Forum</p>
-                <p id="footer"><%= link_to '+ schedule', new_place_bookmark_path(@place) %></p>
+                 <div class="styling_lines_box_forum"></div>
               </div>
 
-<div class="ml-3">
+
+<div class="d-flex justify-content-between ml-3 mr-3">
   <%=link_to "Add New Post", new_forum_post_path(@forum)%>
+  <%=link_to "Add To Schedule", new_place_bookmark_path(@place)%>
 </div>
 
 <div id="avatars-carousel" class="carousel slide" data-ride="carousel">
