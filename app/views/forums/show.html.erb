@@ -42,7 +42,7 @@
           <i class="far fa-trash-alt"></i>
           <%end%>
       <%end%>
-          <%= link_to forum_post_path(forum_id: @forum, post_id: post) do %>
+          <%= link_to forum_post_path(@forum, post) do %>
             <i class="fas fa-reply"></i>
           <%end%>
         </div>

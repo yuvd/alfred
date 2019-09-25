@@ -28,18 +28,18 @@
 
 <div class="d-flex justify-content-between">
  <div class="avatar_frame-reply ">
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-square <%= "avatar-square-right" if i.even? %> />
-    <%# cl_image_tag "Clara_gsgez3", class: "avatar-square <%= "avatar-square-right" if i.even? %>" %>
+
+    <%= cl_image_tag (current_user.photo.blank? ? 'https://kitt.lewagon.com/placeholder/users/arthur-littm' : current_user.photo ) , class: "avatar-square #{i.even? && 'avatar-square-right'}" %>
   </div>
 
-  <div class="notification-thread-reply <%= "left-side-reply" if i.odd? %>" data-notification-id="<%=@post.id%>">
+  <div class="notfication-thread-reply <%= 'left-side-reply' if i.odd? %>" data-notification-id="<%=@post.id%>">
     <div class="notification-content">
       <div class="">
 
 
           <div class="title-forum-box d-flex justify-content-between">
             <div>
-              <small id="absolute-review"><%=@post.user.nickname%> on <%=@post.created_at.strftime("%d/%m/%y at %I:%M%p")%></small>
+              <small id="absolute-review"><%=@post.user.nickname%> on <%= @post.created_at.strftime("%d/%m/%y at %I:%M%p")%></small>
             </div>
 
             <div class="notification-forum-actions ml-2">

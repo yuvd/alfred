@@ -4,7 +4,7 @@ class Place < ApplicationRecord
 
   has_many :bookmarks, dependent: :destroy
 
-  has_one :forum
+  has_one :forum, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :category, presence: true
