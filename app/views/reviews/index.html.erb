@@ -11,7 +11,7 @@
               <div class="notification_body">
                 <div class="avatar_frame">
 
-    <%= cl_image_tag (current_user.photo.blank? ? 'https://kitt.lewagon.com/placeholder/users/arthur-littm' : current_user.photo ),  class: "avatar-square" %>
+    <%= cl_image_tag (review.user.photo.blank? ? 'https://kitt.lewagon.com/placeholder/users/arthur-littm' : review.user.photo ),  class: "avatar-square" %>
                 </div>
 
                 <div class="notification-content">

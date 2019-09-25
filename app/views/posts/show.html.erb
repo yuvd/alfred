@@ -29,8 +29,9 @@
 <div class="d-flex justify-content-between">
  <div class="avatar_frame-reply ">
 
-    <%= cl_image_tag (current_user.photo.blank? ? 'https://kitt.lewagon.com/placeholder/users/arthur-littm' : current_user.photo ) , class: "avatar-square #{i.even? && 'avatar-square-right'}" %>
+    <%= cl_image_tag (reply.user.photo.blank? ? 'https://kitt.lewagon.com/placeholder/users/arthur-littm' : reply.user.photo ) , class: "avatar-square #{i.even? && 'avatar-square-right'}" %>
   </div>
+
 
   <div class="notfication-thread-reply <%= 'left-side-reply' if i.odd? %>" data-notification-id="<%=@post.id%>">
     <div class="notification-content">
