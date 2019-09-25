@@ -10,7 +10,7 @@ class ForumsController < ApplicationController
   end
 
   def create
-    place = Place.find(params[:place_id])
+      place = Place.find(params[:place_id])
     unless place.forum.nil?
       redirect_to forum_path(place.forum)
     else
