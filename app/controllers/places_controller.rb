@@ -5,33 +5,33 @@ class PlacesController < ApplicationController
 
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
     if params[:category]
-      unless Place.where({city: current_user.location, category: Category.find_by(name:params[:category])}).empty?
-        @places = Place.where({city: current_user.location, category: Category.find_by(name:params[:category])}).to_a
+      unless Place.where({city: (current_user.location.split(",")[0]), category: Category.find_by(name:params[:category])}).empty?
+        @places = Place.where({city: (current_user.location.split(",")[0]), category: Category.find_by(name:params[:category])}).to_a
       else
 
-        businesses = Businesses.get_businesses(params[:category], current_user.location)
+        businesses = Businesses.get_businesses(params[:category], (current_user.location.split(",")[0]))
         businesses.each do |business|
           if Place.find_by(name: business["name"]).blank?
             unless business["location"]["address1"].blank?
-              Place.create!(name: business["name"], location: business["location"]["address1"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: params[:category]))
+              Place.create!(name: business["name"], location: business["location"]["address1"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: (current_user.location.split(",")[0]), category: Category.find_by(name: params[:category]))
             else
-              Place.create!(name: business["name"], location: "#{current_user.location} Area", longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: params[:category]))
+              Place.create!(name: business["name"], location: "#{(current_user.location.split(",")[0])} Area", longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: (current_user.location.split(",")[0]), category: Category.find_by(name: params[:category]))
             end
           end
         end
-        @places = Place.where(category: Category.find_by(name: params[:category]), city: current_user.location)
+        @places = Place.where(category: Category.find_by(name: params[:category]), city: (current_user.location.split(",")[0]))
         populate_places_with_businesses(params[:category])
-        @places = Place.where(category: Category.find_by(name: params[:category]), city: current_user.location).to_a
+        @places = Place.where(category: Category.find_by(name: params[:category]), city: (current_user.location.split(",")[0])).to_a
 
       end
     else
       @places = []
       @categories.each do |category|
-        unless Place.where(category: category, city: current_user.location).empty?
-          @places << Place.where(category: category, city: current_user.location).to_a
+        unless Place.where(category: category, city: (current_user.location.split(",")[0])).empty?
+          @places << Place.where(category: category, city: (current_user.location.split(",")[0])).to_a
         else
           populate_places_with_businesses(category.name)
-          @places << Place.where(category: category, city: current_user.location).to_a
+          @places << Place.where(category: category, city: (current_user.location.split(",")[0])).to_a
         end
       end
       @places.flatten!
@@ -73,13 +73,13 @@ class PlacesController < ApplicationController
     end
     
     def populate_places_with_businesses(category)
-      businesses = Businesses.get_businesses(category, current_user.location)
+      businesses = Businesses.get_businesses(category, (current_user.location.split(",")[0]))
       businesses.each do |business|
         if Place.find_by(name: business["name"]).blank?
           unless business["location"]["address1"].blank?
             Place.create!(name: business["name"], location: business["location"]["address1"], photo: business["image_url"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: (current_user.location.split(",")[0]), category: Category.find_by(name: category))
           else
-            Place.create!(name: business["name"], location: "#{(current_user.location.split(",")[0]).downcase} Area", photo: business["image_url"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: category))
+            Place.create!(name: business["name"], location: "#{(current_user.location.split(",")[0])} Area", photo: business["image_url"], longitude: business["coordinates"]["longitude"], latitude: business["coordinates"]["latitude"], city: current_user.location, category: Category.find_by(name: category))
           end
         end
       end
