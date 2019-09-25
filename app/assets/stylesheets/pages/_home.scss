@@ -99,7 +99,7 @@ background-size:cover;
   font-family:'Roboto';
   font-weight:600;
   font-size:22px;
-  padding-top:19vh;
+  padding-top:17vh;
   height:200px;
   overflow:hidden;
   -webkit-backface-visibility: hidden;
@@ -206,8 +206,7 @@ background-size:cover;
 
 
 .log-in-sign-up {
-    position: relative;
-    top: 19px;
-    left: 327px;
-    z-index: 50;
+    text-align: right;
+    padding-top: 19px;
+    margin-right: 20px;
 }
