@@ -16,7 +16,7 @@
             <div class="">
               <div class="text-preferences">
                 <p id="place-name">Tell me what you like.</p>
-                  <p id="alfred">Your, Alfred.</p>
+                  <p id="alfred">Yours, Alfred.</p>
                   <div>
                   </div>
               </div>
@@ -48,11 +48,12 @@
               <div class="category-choices">
                 <% Category.all.each do |category| %>
 
-
-                <input type="checkbox" class="d-none choice" value="<%= category.id %>" name="preferences[category_ids][]" id="preferences_category_ids_<%= category.id %>">
-                <label for="preferences_category_ids_<%= category.id %>" class="preference-label">
-                  <%= category.name %>
-                </label>
+                <%unless category.name == "all"%>
+                  <input type="checkbox" class="d-none choice" value="<%= category.id %>" name="preferences[category_ids][]" id="preferences_category_ids_<%= category.id %>">
+                  <label for="preferences_category_ids_<%= category.id %>" class="preference-label">
+                    <%= category.name %>
+                  </label>
+                <%end%>
 
                 <% end %>
               </div>

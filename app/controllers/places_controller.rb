@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
      @pictures = [ 'city-lights.png', 'night2.jpeg', 'light-city.jpeg', 'cityy.jpeg', 'red-city.jpeg']
 
     @categories = Category.includes(:preferences).where(preferences: { user: current_user })
-    if params[:category]
+    if params[:category] && params[:category] != "all"
       unless Place.where({city: (current_user.location.split(",")[0]), category: Category.find_by(name:params[:category])}).empty?
         @places = Place.where({city: (current_user.location.split(",")[0]), category: Category.find_by(name:params[:category])}).to_a
       else
