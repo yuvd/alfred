@@ -49,7 +49,7 @@
       </div>
     </div>
     <p><%=post.description%></p>
-    <div id="votes-container">
+    <div id="votes-container" data-votes-container-id="<%=post.id%>">
       <%=render 'votes', post: post%>
     </div>
 
