@@ -25,10 +25,12 @@
             <p id="category-card"><%= place.category.name %></p>
             <p id="place-name-new"><%= place.name %></p>
 
+
               <% reviews = place.reviews %>
+
         <% @avg_rating = reviews.blank? ? 0 : reviews.average(:rating).floor%>
         <% if place.reviews.length == 0 %>
-          <br>
+
         <% else %>
           <div class="star-rating  mb-2">
             <% if @avg_rating == 5 %>
@@ -45,6 +47,10 @@
             <% end %>
           </div>
         <% end %>
+
+
+
+
         <div class="d-flex justify-content-start align-items-center location-card ">
               <p class="mr-2 size"><i class="fa fa-map-pin"></i></p>
               <p id="location"><%= place.location %></p>
