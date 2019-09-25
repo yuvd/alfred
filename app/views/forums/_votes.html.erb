@@ -1,13 +1,14 @@
 <%if current_user.post_votes.where(post: post).empty?%>
-        <p><%= link_to post_post_votes_path(post), method: :post, remote: true do %>
+        <p class="votes"><%= link_to post_post_votes_path(post), method: :post, remote: true do %>
+
         <i class="far fa-thumbs-up" id="vote"></i>
         <%end%>
-        <span data-votes-counter-id="<%=post.id%>"><%=post.post_votes.count%> votes</span>
+        <span data-votes-counter-id="<%=post.id%>"><%=post.post_votes.count%> <%= post.post_votes.count == 1 ? 'vote' : 'votes'%></span>
       <%else%>
-        <p><%= link_to post_vote_path(post.post_votes.where(user: current_user).first), method: :delete, remote: true do %>
+        <p class="votes"><%= link_to post_vote_path(post.post_votes.where(user: current_user).first), method: :delete, remote: true do %>
 
         <i class="far fa-thumbs-down" id="vote"></i>
         <%end%>
-        <span data-votes-counter-id="<%=post.id%>"><%=post.post_votes.count%> votes</span>
+        <span data-votes-counter-id="<%=post.id%>"><%=post.post_votes.count%>  <%= post.post_votes.count == 1 ? 'vote' : 'votes'%></span>
         </p>
 <% end %>

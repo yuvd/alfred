@@ -1,37 +1,83 @@
 <div class="forum_placename">
-    <h3>Add correct place name</h3>
+    <h3><%=  @post.forum.place.name%></h3>
     <p>Thread</p>
 <div class="styling_lines_box_forum"></div>
 </div>
 </div>
 
+<div class="container">
 <div class="ml-3">
   <%=link_to "Back to Forum", forum_path(@forum)%>
 </div>
 
 <div class="notification-thread" data-notification-id="<%=@post.id%>">
-
   <div class="notification-content">
-
     <div class="">
-
-
       <div class="d-flex justify-content-between margin-forum">
       <div class="title-forum-box">
         <small id="absolute-review"><%=@post.user.nickname%> on <%=@post.created_at.strftime("%d/%m/%y at %I:%M%p")%></small>
       </div>
-
       </div>
     </div>
     <p><%=@post.description%></p>
-    <div id="votes-container">
-      <%#render 'votes'%>
-    </div>
-
   </div>
 </div>
 
-<%# render 'reply_form'%>
+<div>
+  <% @post.post_replies.each_with_index do |reply, i| %>
+
+<div class="d-flex justify-content-between">
+ <div class="avatar_frame-reply ">
+
+    <%= cl_image_tag (current_user.photo.blank? ? 'https://kitt.lewagon.com/placeholder/users/arthur-littm' : current_user.photo ) , class: "avatar-square #{i.even? && 'avatar-square-right'}" %>
+  </div>
+
+  <div class="notfication-thread-reply <%= 'left-side-reply' if i.odd? %>" data-notification-id="<%=@post.id%>">
+    <div class="notification-content">
+      <div class="">
+
+
+          <div class="title-forum-box d-flex justify-content-between">
+            <div>
+              <small id="absolute-review"><%=@post.user.nickname%> on <%= @post.created_at.strftime("%d/%m/%y at %I:%M%p")%></small>
+            </div>
+
+            <div class="notification-forum-actions ml-2">
+              <%if current_user == reply.user%>
+                <%= link_to post_post_reply_path(@post,reply), method: :delete  do %>
+                <p><i class="fa fa-trash-alt"></i></p>
+                <%end%>
+              <%end%>
+            </div>
+        </div>
+
+
+          <p><%= reply.description %></p>
+
+
+      </div>
+      </div>
+      </div>
+  </div>
+
+  <% end %>
+</div>
+
+
+<div class="notification-thread-submit-reply" data-notification-id="<%=@post.id%>">
+  <div class="notification-content">
+    <div class="">
+      <div class="d-flex justify-content-between">
+
+      </div>
+    </div>
+    <%= render 'reply_form'%>
+  </div>
+</div>
+</div>
+
+
+
 
 <!-- <div class="container">
   <%@post.post_replies.each do |post|%>

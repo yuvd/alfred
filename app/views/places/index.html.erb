@@ -18,9 +18,11 @@
 
 
 
+
     <div class="next" style="color: white"><i class="fas fa-chevron-right"></i></div>
     <div class="previous" style="color: white"><i class="fas fa-chevron-left"></i></div>
   <div class="slider2">
+
 
 
     <% @places.each_with_index do |place, i| %>
@@ -32,10 +34,12 @@
             <!-- <div class="next" style="color: white"><i class="fas fa-chevron-right"></i></div>
             <div class="previous" style="color: white"><i class="fas fa-chevron-left"></i></div> -->
 
+
               <% reviews = place.reviews %>
+
         <% @avg_rating = reviews.blank? ? 0 : reviews.average(:rating).floor%>
         <% if place.reviews.length == 0 %>
-          <br>
+
         <% else %>
           <div class="star-rating  mb-2">
             <% if @avg_rating == 5 %>
@@ -52,6 +56,10 @@
             <% end %>
           </div>
         <% end %>
+
+
+
+
         <div class="d-flex justify-content-start align-items-center location-card ">
               <p class="mr-2 size"><i class="fa fa-map-pin"></i></p>
               <p id="location"><%= place.location %></p>
