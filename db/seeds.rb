@@ -13,24 +13,13 @@ User.destroy_all
 
 CategoryService.new.perform
 
-user = User.create!(email: 'robert@gmail.com', password: '123456')
-
-place1 = Place.create!(name: 'Yoga 4 U', category: Category.first, location: 'Ben Yehuda 32, Tel Aviv')
-place2 = Place.create!(name: 'Yoga Sababa', category: Category.first, location: 'Bograshov 14, Tel Aviv')
-place3 = Place.create!(name: 'Space', category: Category.first, location: 'Sheinkin 42, Tel Aviv')
-place4 = Place.create!(name: 'FitFabric', category: Category.first, location: 'Allenby 14, Tel Aviv')
-place5 = Place.create!(name: 'Aida', category: Category.first, location: 'Jabotinsky 14, Tel Aviv')
-place6 = Place.create!(name: 'European Swimming Championships', category: Category.first, location: 'Herzeliya, Israel')
-place7 = Place.create!(name: 'Olim in Tech', category: Category.last, location: 'Levinsky 14, Tel Aviv')
-place8 = Place.create!(name: 'Type O Negative', category: Category.last, location: 'HaYarkon 14, Tel Aviv')
-place9 = Place.create!(name: 'Dead Can Dance', category: Category.last, location: 'Eilat 14, Tel Aviv')
-place10 = Place.create!(name: 'Holmes Place', category: Category.last, location: 'King George 14, Tel Aviv')
-place11 = Place.create!(name: 'Yoga Beseder', category: Category.first, location: 'Bograshov 142, Tel Aviv')
-
-
-preference1 = Preference.create!(user: user, category: Category.first)
-preference2 = Preference.create!(user: user, category: Category.find(2))
-preference3 = Preference.create!(user: user, category: Category.find(3))
+usero = User.create!(email: 'brucewayne@gmail.com', name: 'Bruce Wayne', nickname: 'Bats', password: '123456', photo: )
+user1 = User.create!(email: 'robert@gmail.com', name: 'Robert', nickname: 'Robert', password: '123456')
+user2 = User.create!(email: 'david@gmail.com', name: 'David', nickname: 'Dav', password: '123456', photo: 'Rabea_jhxjj9')
+user3 = User.create!(email: 'ben@gmail.com', name: 'Ben', nickname: 'Benny', password: '123456' , photo: 'Ben_ax5krf')
+user4 = User.create!(email: 'clara@gmail.com', name: 'Clara', nickname: 'clari', password: '123456', photo: ' Clara_gsgez3')
+user5 = User.create!(email: 'rabea@gmail.com', name: 'Rabea', nickname: 'Rabi', password: '123456', photo: 'Rabea_jhxjj9')
+user6 = User.create!(email: 'joy@gmail.com', name: 'Bruce Wayne', nickname: 'J.Oy.', password: '123456', photo: 'Joy_jptyn3')
 
 puts "done"
 
