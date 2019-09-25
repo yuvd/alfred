@@ -40,7 +40,7 @@
 
           <div class="title-forum-box d-flex justify-content-between">
             <div>
-              <small id="absolute-review"><%=@reply.user.nickname%> on <%= @reply.created_at.strftime("%d/%m/%y at %I:%M%p")%></small>
+              <small id="absolute-review"><%= reply.user.nickname%> on <%= reply.created_at.strftime("%d/%m/%y at %I:%M%p")%></small>
             </div>
 
             <div class="notification-forum-actions ml-2">
