@@ -21,9 +21,11 @@
     <div class=logo_icon_wrapper>
     <%= image_tag "butler-logo.png", class: "logo_gen logo_icon"%>
     </div>
-    <%= render 'address_form.erb' %>
 
-    <div class="nav-item dropdown mt-3 d-flex justify-content-center">
+    <div class="home-cta">
+      <%= render 'address_form.erb' %>
+
+      <div class="nav-item dropdown mt-3 d-flex justify-content-center">
 
 
 
@@ -35,8 +37,10 @@
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <%= link_to "Profile", profile_path, class: "dropdown-item" %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
       </div>
     </div>
+
     <% else %>
 
     <!-- <h1 class="mt-5"> Hi friend,</h1>
@@ -53,7 +57,6 @@
       </div>
 
     </div>
-
 
     <%= link_to "SIGN UP", 'users/sign_up', class: "btn button-registration mt-5" %>
 

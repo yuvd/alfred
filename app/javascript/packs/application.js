@@ -21,7 +21,9 @@ $(document).ready(function(){
     $(this).toggleClass("active");
   });
 
-
+// $('.carousel-control-prev').click(function(){
+//   $(this).toggleClass('d-none');
+// });
 // $(window).load(function(){
 //     $(".col-3 input").val("");
 
@@ -47,6 +49,9 @@ $(document).ready(function(){
 const toggleInfo = event => {
   console.log(event)
   event.currentTarget.classList.toggle('new-expanded');
+  document.querySelector(".next").classList.toggle("d-none");
+  document.querySelector(".previous").classList.toggle("d-none")
+
 }
 
 const cardCat = document.querySelectorAll('.card-category');
@@ -62,6 +67,7 @@ $('.card-category-review').click(function(){
 $('.card-category-profile').click(function(){
   $(this).toggleClass('expanded-profile');
 });
+
 
 
 // const card = document.querySelector('.slider2')

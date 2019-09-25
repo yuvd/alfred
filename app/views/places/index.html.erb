@@ -17,13 +17,22 @@
 </div> -->
 
 
-  <div class="slider2">   
+
+
+    <div class="next" style="color: white"><i class="fas fa-chevron-right"></i></div>
+    <div class="previous" style="color: white"><i class="fas fa-chevron-left"></i></div>
+  <div class="slider2">
+
+
+
     <% @places.each_with_index do |place, i| %>
       <div class="card-category slide-cat-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0))" >
         <header class="slide-overlay">
           <div class="text">
             <p id="category-card"><%= place.category.name %></p>
             <p id="place-name-new"><%= place.name %></p>
+            <!-- <div class="next" style="color: white"><i class="fas fa-chevron-right"></i></div>
+            <div class="previous" style="color: white"><i class="fas fa-chevron-left"></i></div> -->
 
 
               <% reviews = place.reviews %>
@@ -105,7 +114,61 @@
 
         </div>
 
+
+
     <% end %>
   </div>
 
 
+
+    <script>
+
+      const handleSlide = () =>{
+      const next = document.querySelector(".next")
+      const previous = document.querySelector(".previous")
+      const slider = document.querySelector(".slider2")
+      let currentPos = slider.scrollLeft;
+
+      slider.addEventListener('scroll', event => currentPos = slider.scrollLeft)
+      const toggleSlide = (event) => {
+        if(event.currentTarget == next) {
+          currentPos += 400;
+        } else {
+          currentPos -= 400;
+        }
+
+        slider.scroll({left: currentPos, behavior: "smooth"})
+      }
+
+      next.addEventListener('click', toggleSlide)
+      previous.addEventListener('click', toggleSlide)
+
+
+      }
+
+      handleSlide()
+      // var fromLeft = 0
+      // var fromRight = 0
+
+      // slider = document.querySelector(".slider2")
+      // next.addEventListener("click", () => {
+      //   fromLeft += 400;
+      //   slider.scroll({left: fromLeft, behavior: "smooth"});
+      //                 })
+      // slider.addEventListener("scroll",  function(e) {
+      //   // console.log(e.currentTarget.scrollWidth);
+      //   // console.log(e.currentTarget.scrollLeft);
+      //  fromLeft = e.currentTarget.scrollLeft;
+      // })
+
+      // slider = document.querySelector(".slider2")
+      // previous.addEventListener("click", () => {
+      //   fromRight -= 400;
+      //   slider.scroll({left: fromRight, behavior: "smooth"});
+      //                 })
+      // slider.addEventListener("scroll",  function(e) {
+      //   // console.log(e.currentTarget.scrollWidth);
+      //   // console.log(e.currentTarget.scrollLeft);
+      //  fromRight = e.currentTarget.scrollRight;
+      // })
+    </script>
