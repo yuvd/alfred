@@ -11,14 +11,41 @@
     </div>
   </div>
 
+<!-- <div class="places-intro">
+  <p id="intro-index-places"> Scroll cards to discover, <%= current_user.nickname %>!</p>
+  <p id="intro-index-places-alfred"> -Alfred</p>
+</div> -->
+
 
   <div class="slider2">   
     <% @places.each_with_index do |place, i| %>
       <div class="card-category slide-cat-item" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0))" >
         <header class="slide-overlay">
           <div class="text">
-            <p id="place-name"><%= place.name %></p>
-            <div class="d-flex justify-content-start align-items-center ">
+            <p id="category-card"><%= place.category.name %></p>
+            <p id="place-name-new"><%= place.name %></p>
+
+              <% reviews = place.reviews %>
+        <% @avg_rating = reviews.blank? ? 0 : reviews.average(:rating).floor%>
+        <% if place.reviews.length == 0 %>
+          <br>
+        <% else %>
+          <div class="star-rating  mb-2">
+            <% if @avg_rating == 5 %>
+              <% 5.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            <% else %>
+              <% @avg_rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            <% (5 - @avg_rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <% end %>
+          </div>
+        <% end %>
+        <div class="d-flex justify-content-start align-items-center location-card ">
               <p class="mr-2 size"><i class="fa fa-map-pin"></i></p>
               <p id="location"><%= place.location %></p>
             </div>
@@ -44,29 +71,9 @@
          </div>
          <div class="text-body" id="description">
           <p id="place-name-review">Reviews</p>
-        <% reviews = place.reviews %>
-        <% @avg_rating = reviews.blank? ? 0 : reviews.average(:rating).floor%>
-        <% if place.reviews.length == 0 %>
-          <br>
-        <% else %>
-          <div class="star-rating ml-3 mb-2">
-            <% if @avg_rating == 5 %>
-              <% 5.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-            <% else %>
-              <% @avg_rating.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-            <% (5 - @avg_rating).times do %>
-              <i class="far fa-star"></i>
-            <% end %>
-            <% end %>
-          </div>
-        <% end %>
-     
+
           <% place.reviews.last(2).reverse.each do |review| %>
-            <p id="location"><%= review.content %></p>
+            <p id="location-review"><%= review.content %></p>
           <% end %>
           <% if place.reviews.length == 0 %>
             <p id="all_reviews">no reviews yet</p>
@@ -79,7 +86,7 @@
 
 
               <div class="line-schedule">
-                <p id="footer"><%= link_to 'schedule', new_place_bookmark_path(place) %></p>
+                <p id="footer"><%= link_to '+ schedule', new_place_bookmark_path(place) %></p>
               </div>
               <div class="line-schedule">
                 <p id="footer"><%=link_to "forum", place_forums_path(place), method: :post%></p>

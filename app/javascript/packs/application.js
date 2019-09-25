@@ -53,9 +53,7 @@ const cardCat = document.querySelectorAll('.card-category');
 cardCat.forEach(card => card.addEventListener('click', toggleInfo))
 
 
-$('.card-category-mark').click(function(){
-  $(this).toggleClass('expanded-mark');
-});
+
 
 $('.card-category-review').click(function(){
   $(this).toggleClass('expanded-review');
@@ -64,6 +62,13 @@ $('.card-category-review').click(function(){
 $('.card-category-profile').click(function(){
   $(this).toggleClass('expanded-profile');
 });
+
+
+// const card = document.querySelector('.slider2')
+// $('.slider2').click(function(){
+//   $('.places-intro').toggleClass('d-none');
+// });
+
 
   // const checks = document.querySelectorAll('.form-check');
 

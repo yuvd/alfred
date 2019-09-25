@@ -1,10 +1,11 @@
 
 .black-background {
-  background-color: black;
+  background-color: rgba(0,0,0,0.7);
 }
 
 .height {
   height:100%;
+      min-height: 100vh;
 }
 
 .slider-bookmarks-index {
@@ -26,7 +27,7 @@
     padding-left: 41px;
     position: relative;
     top: -279px;
-        left: 19px;
+         left: 23px;
     color: white;
     width: 300px;
 }
@@ -64,21 +65,27 @@ ul#myTab {
 }
 
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-    color: white;
-    background-color: green;
+   color: white;
+    background-color: transparent;
+    border-bottom: 4px solid green;
+    border-right: none;
+    border-top: none;
+    border-left: none;
     text-decoration: none;
-    border: none;
+    /* border: none; */
     border-radius: 4px;
+
   }
 
   .square-line-list {
- border-left: 4px solid green;
+border-left: 4px solid green;
     border-bottom: 4px solid green;
-    width: 132px;
+    width: 208px;
     position: relative;
     top: -188px;
-    right: -27px;
+    right: -36px;
     height: 95px;
+        margin-top: -27px;
   }
 
   .schedule {
@@ -88,6 +95,7 @@ ul#myTab {
     letter-spacing: 1px;
     color: white;
     font-family: "Titillium Web", "light 300" !important;
+    height: 141px;
   }
 
   #time {

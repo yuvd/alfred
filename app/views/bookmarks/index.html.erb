@@ -53,9 +53,19 @@
        <p id="time"><%= bookmark.time.strftime("%d/%m at %I:%M%p") if bookmark.time != nil %></p>
        <div class="schedule-info">
           <p><%= bookmark.place.name%></p>
+
         <div class="d-flex justify-content-start">
-         <p class="z-review"><%= link_to 'Review ', new_place_review_path(bookmark.place) %></p>
-          <p class="ml-1"><%= link_to ' | Delete', bookmark_path(bookmark), method: :delete %></p>
+          <div class="d-flex justify-content-start align-items-center ">
+                  <p class="review-icon"><i class="fa fa-signature"></i></p>
+                   <p><%= link_to 'Review | ', new_place_review_path(bookmark.place) %></p>
+                </div>
+
+                <div class="d-flex justify-content-start align-items-center ">
+                  <p class="mr-2 review-icon ml-2"><i class="fa fa-trash"></i></p>
+                   <p><%= link_to 'Delete', bookmark_path(bookmark), method: :delete %></p>
+                </div>
+
+
         </div>
         </div>
         <div class="square-line-schedule-info">

@@ -4,13 +4,23 @@
     <% if user_signed_in? %>
 
 
- <div class="text-home">
+ <!-- <div class="text-home">
                 <p id="place-name">Where are we going?</p>
                   <p id="alfred-2">Your Travel Butler, Alfred.</p>
                   <div>
+ -->
 
+    <div class="logo_wrapper">
 
+      <div class="logo_anim logo_main">ALFRED</div>
+      <div class="logo_anim sublogo">
+        <span>your travel butler</span>
+      </div>
 
+    </div>
+    <div class=logo_icon_wrapper>
+    <%= image_tag "butler-logo.png", class: "logo_gen logo_icon"%>
+    </div>
     <%= render 'address_form.erb' %>
 
     <div class="nav-item dropdown mt-3 d-flex justify-content-center">
@@ -27,7 +37,7 @@
     <p class="mt-5 ">I am Alfred, your personal Assistant.</p>
     <p>I would love to get to know you.</p> -->
     <div class="logo_icon_wrapper">
-      <%= image_tag "Infos.png", class: "logo_gen logo_icon"%>
+      <%= image_tag "butler-logo.png", class: "logo_gen logo_icon"%>
     </div>
     <div class="logo_wrapper">
 
