@@ -13,13 +13,13 @@ User.destroy_all
 
 CategoryService.new.perform
 
-usero = User.create!(email: 'brucewayne@gmail.com', name: 'Bruce Wayne', nickname: 'Bats', password: '123456', photo: )
-user1 = User.create!(email: 'robert@gmail.com', name: 'Robert', nickname: 'Robert', password: '123456')
-user2 = User.create!(email: 'david@gmail.com', name: 'David', nickname: 'Dav', password: '123456', photo: 'Rabea_jhxjj9')
-user3 = User.create!(email: 'ben@gmail.com', name: 'Ben', nickname: 'Benny', password: '123456' , photo: 'Ben_ax5krf')
-user4 = User.create!(email: 'clara@gmail.com', name: 'Clara', nickname: 'clari', password: '123456', photo: ' Clara_gsgez3')
-user5 = User.create!(email: 'rabea@gmail.com', name: 'Rabea', nickname: 'Rabi', password: '123456', photo: 'Rabea_jhxjj9')
-user6 = User.create!(email: 'joy@gmail.com', name: 'Bruce Wayne', nickname: 'J.Oy.', password: '123456', photo: 'Joy_jptyn3')
+user0 = User.create!(email: 'brucewayne@gmail.com', name: 'Bruce Wayne', nickname: 'Bats', password: '123456', remote_photo_url: 'https://res.cloudinary.com/dodsrfkhr/image/upload/v1569415877/Yuval2_rbs5i0.jpg')
+user1 = User.create!(email: 'robert@gmail.com', name: 'Robert', nickname: 'Robert', password: '123456', remote_photo_url: 'https://res.cloudinary.com/dodsrfkhr/image/upload/v1569415877/Yuval2_rbs5i0.jpg')
+user2 = User.create!(email: 'david@gmail.com', name: 'David', nickname: 'Dav', password: '123456', remote_photo_url: 'https://res.cloudinary.com/dodsrfkhr/image/upload/v1569409595/David_w2y7oa.jpg')
+user3 = User.create!(email: 'ben@gmail.com', name: 'Ben', nickname: 'Benny', password: '123456' , remote_photo_url: 'https://res.cloudinary.com/dodsrfkhr/image/upload/v1569409604/Ben_ax5krf.jpg')
+user4 = User.create!(email: 'clara@gmail.com', name: 'Clara', nickname: 'clari', password: '123456', remote_photo_url: 'https://res.cloudinary.com/dodsrfkhr/image/upload/v1569409591/Clara_gsgez3.jpg')
+user5 = User.create!(email: 'rabea@gmail.com', name: 'Rabea', nickname: 'Rabi', password: '123456', remote_photo_url: 'https://res.cloudinary.com/dodsrfkhr/image/upload/v1569409617/Rabea_jhxjj9.jpg')
+user6 = User.create!(email: 'joy@gmail.com', name: 'Joy', nickname: 'J.Oy.', password: '123456', remote_photo_url: 'https://res.cloudinary.com/dodsrfkhr/image/upload/v1569416547/joy2_jz7qgz.jpg')
 
 puts "done"
 
