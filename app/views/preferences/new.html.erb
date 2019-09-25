@@ -46,7 +46,7 @@
 
             <div class="form-group mt-4 mr-2" id="last">
               <div class="category-choices">
-                <% Category.all.each do |category| %>
+                <% Category.all.order(name: :asc).each do |category| %>
 
 
                 <input type="checkbox" class="d-none choice" value="<%= category.id %>" name="preferences[category_ids][]" id="preferences_category_ids_<%= category.id %>">

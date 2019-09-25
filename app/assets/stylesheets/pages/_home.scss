@@ -67,21 +67,18 @@ background-size:cover;
   width: 100%;
   text-align: center;
   overflow:hidden;
-  -webkit-backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  -webkit-transform: translate3d(0,0,0);
+  // -webkit-backface-visibility: hidden;
+  // -webkit-perspective: 1000;
+  // -webkit-transform: translate3d(0,0,0);
+  animation: load 10s;
 }
 
-.logo_gen {
-  opacity: 0;
-}
+
 
 .logo_icon {
   height: 100%;
   overflow:hidden;
   white-space:nowrap;
-  -webkit-animation: load 10s;
-  animation: load 60s;
 }
 
 // .logo_icon {
@@ -90,7 +87,7 @@ background-size:cover;
 
 @keyframes load {
     0% {opacity: 0;}
-    10% {opacity: 1;}
+    30% {opacity: 1;}
     100% {opacity: 1;}
 }
 
@@ -132,7 +129,7 @@ background-size:cover;
                        ID/Class should've been used.
                        For a small demo
                        it's okaish for now */
-  animation-delay: 10s;
+  // animation-delay: 10s;
   animation: showup 8s;
 }
 
@@ -143,19 +140,31 @@ background-size:cover;
 
 .logo_anim:last-of-type {
   width:0px;
-  animation: reveal 12s;
+  animation: reveal 6200ms;
 }
 
 .logo_anim:last-of-type span {
   margin-left:-300px;
-  animation: slidein 12s;
+  animation: slidein 7s;
+}
+
+.home-cta {
+  animation: showcta 8s;
+}
+
+
+@keyframes showcta {
+  0% {opacity: 0;}
+  75% {opacity: 0;}
+  90% {opacity: 1;}
+  100% {opacity: 1;}
 }
 
 @keyframes showup {
     0% {opacity:0;}
     10% {opacity:0;}
-    30% {opacity:1;}
-    60% {opacity:1;}
+    37% {opacity:1;}
+    40% {opacity:1;}
     80% {opacity:1;}
     100% {opacity:1;}
 }
@@ -169,8 +178,8 @@ background-size:cover;
 
 @keyframes reveal {
     0% {opacity:0;width:0px;}
-    20% {opacity:1;width:0px;}
-    30% {width:125px;}
+    40% {opacity:1;width:0px;}
+    70% {width:125px;}
     80% {opacity:1;}
     100% {opacity:1;width:125px;}
 }
