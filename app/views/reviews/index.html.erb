@@ -10,8 +10,10 @@
             <% @place.reviews.each do |review| %>
               <div class="notification_body">
                 <div class="avatar_frame">
-                  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-square" />
+
+    <%= cl_image_tag (current_user.photo.blank? ? 'https://kitt.lewagon.com/placeholder/users/arthur-littm' : current_user.photo ),  class: "avatar-square" %>
                 </div>
+
                 <div class="notification-content">
                   <div class="notification-top">
                   <p id="reviewer"><%= review.user.name %></p>
