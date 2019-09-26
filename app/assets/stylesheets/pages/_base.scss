@@ -1,7 +1,3 @@
-body {
-
-
-}
 
 
 input::placeholder {
@@ -28,7 +24,18 @@ input::placeholder {
   padding: 8px;
 }
 
-
 .black-background {
   background: black;
+}
+
+@media only screen and (min-width: 700px) {
+  #mobile {
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #laptop{
+    display:none;
+  }
 }

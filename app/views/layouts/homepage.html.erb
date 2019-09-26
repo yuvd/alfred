@@ -11,14 +11,31 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <link rel="manifest" href="<%= asset_path 'manifest.json.erb' %>">
-
-     <%= render 'shared/ios_pwa_links' %>
+    <%= render 'shared/ios_pwa_links' %>
   </head>
-  <body class="home-page-layout">
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
+  <section id="mobile">
+    <body class="home-page-layout">
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+    </section>
+    <section id="laptop">
+       <div class="logo_wrapper">
+
+      <div class="logo_anim logo_main">ALFRED</div>
+      <div class="logo_anim sublogo">
+        <span>your travel butler</span>
+      </div>
+
+    </div>
+      <div class=logo_icon_wrapper>
+    <%= image_tag "https://res.cloudinary.com/dodsrfkhr/image/upload/v1569423330/logo_h3miuw.png", class: "logo_gen logo_icon"%>
+    </div>
+    <p></p>
+     <p> Happy to assist you on a mobile device.</p>
+    <p>- Your Travel Butler, Alfred</p>
+    </section>
   </body>
 </html>
